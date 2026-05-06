@@ -1,7 +1,7 @@
 function Wellbeing() {
     return (
     <div> 
-    <h1>Wellbeing</h1>
+    <h1>Well-Being</h1>
     </div>
     ) 
   }

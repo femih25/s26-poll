@@ -1,0 +1,32 @@
+.category-icon-grid {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically */
+    flex-wrap: wrap; /* Allow wrapping if there are too many icons */
+    gap: 2rem; /* Add spacing between icons */
+    padding: 0 2rem 4rem 2rem;
+}
+
+.category-icon {
+    display: flex;
+    flex-direction: column; /* Stack image and title vertically */
+    align-items: center; /* Center image and title horizontally */
+    text-decoration: none; /* Remove underline from links */
+    color: black; 
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    transition: transform 0.3s ease; 
+} 
+
+.category-icon:hover {
+    transform: scale(1.1); 
+}
+
+.category-icon img {
+    width: 100px; /* Set a fixed width for the images */
+    height: 100px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the image fits within the dimensions */
+    margin-bottom: 0.5rem; /* Add spacing between the image and title */
+}
+
