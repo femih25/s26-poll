@@ -7,8 +7,8 @@ function StoryCard({ title, photo, icon, link }) {
     return (
       <a
             href={link}
-            target="_blank" // Open in a new tab
-            rel="noopener noreferrer" // Security for external links
+            target="_blank" 
+            rel="noopener noreferrer" 
             className="story-card-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
         >

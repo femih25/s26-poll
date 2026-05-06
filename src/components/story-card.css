@@ -31,7 +31,7 @@
     width: 100%; /* Set a fixed width for the images */
     height: auto; /* Set a fixed height for the images */
     object-fit: cover; /* Ensure the image fits within the dimensions */
-    margin-bottom: 0.5rem; /* Add spacing between the image and title */
+    margin-bottom: 0.5rem; 
     border-radius: 8px;
 }
 
