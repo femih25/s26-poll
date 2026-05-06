@@ -1,0 +1,72 @@
+.navbar{
+    background-color: white; 
+    padding: 16px 24px 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%; 
+    margin-bottom: 3%; 
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 95%;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .nav-links a:hover {
+    color: #705294;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    list-style: none;
+    padding: 0.5rem;
+    min-width: 160px;
+    z-index: 999;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-menu .wellbeing:hover { background-color: #C4C992; color: black; }
+  .dropdown-menu .AI:hover { background-color: #BEDCE7; color: black; }
+  .dropdown-menu .sports:hover { background-color: #E7A5B9; color: black;}
+  .dropdown-menu .jobs:hover { background-color: #6F9CBE; color: black; }
+  .dropdown-menu .nuissues:hover { background-color: #A390C2; color: black; }
+  .dropdown-menu .natpolitics:hover { background-color: #F1D279; color: black; }
+
+
+
+ /* For Mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Londrina+Solid:wght@300;400;700&display=swap');
+
+
+body {
+    background-color: #ECE9F1;
+    font-family: "DM Sans", sans-serif; 
+    margin: 0 auto; 
+    overflow-x: hidden;
+  }
+  
+  
+  h1{ 
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 60px;
+    line-height: 1.15; 
+  }
+  
+  h2{
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 32px;
+    font-weight: 300; 
+  }
+  
+  h3 {
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+  }
+  
+  p {
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+  }
+  
