@@ -67,18 +67,6 @@ body {
     font-size: 18px;
   }
 
-    .text-box{ 
-        padding: 2.5rem 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: white;
-        border-radius: 8px;
-        margin: 0 auto 1rem auto;
-    }
   
   #from-the-editor{
       margin-bottom: 4rem;

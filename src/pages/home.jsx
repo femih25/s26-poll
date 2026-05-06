@@ -16,13 +16,12 @@ function Home() {
 
     <div id = "from-the-editor"> 
       <h2 className = "sec-title">FROM THE EDITOR</h2> 
-      <p className = "text-box"> [Insert "From the Editor" note here"] <br></br> 
-      -- Ash Wei, Polling Editor</p>
+      
     </div>
 
     <div id = "methodology">
       <h2 className = "sec-title">METHODOLOGY</h2> 
-        <p className = "text-box"> [Insert "Methodology" note here"] </p>
+        
       <a href="https://dailynorthwestern.com" target="_blank" rel="noreferrer" className="audio-box-link">
       <h3 className = 'audio-box'> <PiSpeakerHighFill /> Listen behind the scenes</h3>
       </a> 
