@@ -1,3 +1,5 @@
+import DataDashboard from "../components/data-dashboard"
+
 function AI() {
     return (
     <div> 
@@ -5,7 +7,7 @@ function AI() {
 
     <div id = 'all-results'>
       <h2 className = "sec-title">ALL RESULTS: AI</h2>
-      <h3>BREAKDOWN BY:</h3>
+      <DataDashboard pageKey="page-ai" />
     </div>
 
     </div>

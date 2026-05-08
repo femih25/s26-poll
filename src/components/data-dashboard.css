@@ -1,0 +1,151 @@
+
+.label{
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.data-pill-grid{
+    max-width: 1000px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 2rem; 
+    padding: 0 2rem 4rem 2rem; 
+}
+
+.data-pill{
+    background-color: #A390C2;
+    color: white;
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 0.5rem; 
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.data-pill:hover{
+    transform: scale(1.03);
+}
+
+.data-pill--active{
+    transform: scale(1);
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/*Wellbeing pill styling*/
+.page-wellbeing .data-pill{
+    background-color: #C4C992;
+    border: 2px solid #858864;
+}
+
+.page-wellbeing .data-pill:hover{
+    background-color: #858864; 
+}
+
+.page-wellbeing .data-pill--active{
+    background-color: #858864
+}
+
+
+/*AI pill styling*/
+.page-ai .data-pill{
+    background-color: #BEDCE7;
+    border: 2px solid #768991;
+}
+
+.page-ai .data-pill:hover{
+    background-color: #768991
+}
+
+.page-ai .data-pill--active{
+    background-color: #768991
+}
+
+/*Sports pill styling*/
+.page-sports .data-pill{
+    background-color: #E7A5B9;
+    border: 2px solid #a17380;
+}
+
+.page-sports .data-pill:hover{
+    background-color: #a17380
+}
+
+.page-sports .data-pill--active{
+    background-color: #a17380
+}
+
+/*Jobs pill styling*/
+.page-jobs .data-pill{
+    background-color: #6F9CBE;
+    border: 2px solid #4c6a82;
+}
+
+.page-jobs .data-pill:hover{
+    background-color: #4c6a82
+}
+
+.page-jobs .data-pill--active{
+    background-color: #4c6a82
+}
+
+/*NU Issues pill styling*/
+.page-nu-issues .data-pill{
+    background-color:  #705294;
+    border: 2px solid  #322442;
+}
+
+.page-nu-issues .data-pill:hover{
+    background-color: #322442
+}
+
+.page-nu-issues .data-pill--active{
+    background-color: #322442
+}
+
+/*National politics pill styling*/
+.page-national-politics .data-pill{
+    background-color:  #F1D279;
+    border: 2px solid  #a08a4f;
+}
+
+.page-national-politics .data-pill:hover{
+    background-color: #a08a4f
+}
+
+.page-national-politics .data-pill--active{
+    background-color: #a08a4f
+}
+
+
+.data-embed {
+    width: min(90%, 1000px);
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .data-iframe {
+    width: 100%;
+    border: none;
+    display: block;
+  }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .data-embed { width: 95%; }
+  }
+  
+  @media (max-width: 600px) {
+    .data-pill-grid { gap: 1rem; padding: 0 1rem 2rem 1rem; }
+    .data-pill      { font-size: 16px; }
+    .data-embed     { width: 100%; border-radius: 0; }
+  }
