@@ -70,16 +70,16 @@
 
 /*Sports pill styling*/
 .page-sports .data-pill{
-    background-color: #E7A5B9;
-    border: 2px solid #a17380;
+    background-color: #f0a94f;
+    border: 2px solid #dd831a;
 }
 
 .page-sports .data-pill:hover{
-    background-color: #a17380
+    background-color: #dd831a
 }
 
 .page-sports .data-pill--active{
-    background-color: #a17380
+    background-color: #dd831a
 }
 
 /*Jobs pill styling*/

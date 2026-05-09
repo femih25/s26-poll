@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.Rproj.user
+
+# R files
+.Rhistory
+s26-poll.Rproj

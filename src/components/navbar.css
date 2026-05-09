@@ -1,12 +1,12 @@
 .navbar{
     background-color: white;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-    padding: 16px 24px 16px 24px;
+    padding: 16px 24px;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     width: 100%; 
-    margin-bottom: 3%; 
 }
 
 .nav-links{
@@ -65,7 +65,7 @@
 
   .dropdown-menu .wellbeing:hover { background-color: #C4C992; color: black; }
   .dropdown-menu .AI:hover { background-color: #BEDCE7; color: black; }
-  .dropdown-menu .sports:hover { background-color: #E7A5B9; color: black;}
+  .dropdown-menu .sports:hover { background-color: #F0A94F; color: black;}
   .dropdown-menu .jobs:hover { background-color: #6F9CBE; color: black; }
   .dropdown-menu .nuissues:hover { background-color: #A390C2; color: black; }
   .dropdown-menu .natpolitics:hover { background-color: #F1D279; color: black; }
