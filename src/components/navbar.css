@@ -1,12 +1,12 @@
-.navbar{
-    background-color: white;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-    padding: 16px 24px 16px 24px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%; 
-    margin-bottom: 3%; 
+.navbar {
+  background-color: white;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-links{
@@ -73,14 +73,14 @@
 
 
  /* For Mobile */
-  @media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        padding: 0.5rem;
-    }
+ @media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.5rem;
+  }
 
-    .nav-links a {
-        font-size: 0.9rem;
-    }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
 }
