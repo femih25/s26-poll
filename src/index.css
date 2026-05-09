@@ -4,21 +4,10 @@
 body {
     background-color: #ECE9F1;
     font-family: "DM Sans", sans-serif; 
-    margin: 0; 
-    padding: 0; 
-  }
-
-  #root {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    margin: 0 auto; 
+    overflow-x: hidden;
   }
   
-  html {
-    overflow-x: clip;
-    margin: 0;
-    padding: 0;
-  }
   
   h1{ 
     text-align: center;
