@@ -21,6 +21,12 @@ function App() {
           <Route path="/nu-issues" element={<NUIssues />} />
           <Route path="/national-politics" element={<NationalPolitics />} />
         </Routes>
+    <div id = 'footer'>
+      <p>Editor in Chief: Anavi Prakash</p>
+      <p>Polling Editor: Ash Wei</p>
+      <p>Web Developer: Femi Horrall</p>
+
+    </div>
     </div>
   )
 }

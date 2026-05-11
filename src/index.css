@@ -36,6 +36,26 @@ body {
         margin: 0;
     }
 
+    h2.page-title{ 
+      font-weight: 300; 
+      font-size: 36px;
+      padding: 0 25%;
+      text-align: center;
+      display: block;
+      margin-bottom: 0;
+    }
+
+    h2.page-title::after {
+      content: '';
+      display: block;
+      width: 75%;
+      height: 4px;
+      background-color: #A390C2;
+      margin: 0.5rem auto 0;
+      margin-bottom: 0; 
+    }
+
+
 
   
   h3 {
@@ -43,6 +63,18 @@ body {
     font-family: "Londrina Solid", sans-serif;
     font-size: 24px;
     font-weight: 300;
+  }
+
+  h3.page-byline {
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 2rem;
+  }
+
+  h3.page-section-title-left{
+    text-align: left !important;
+    padding: 0 50% 0 5%;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
   }
 
   h4 {
@@ -80,6 +112,27 @@ body {
     font-size: 18px;
   }
 
+  p.intro-blurb{
+    font-family: "DM Sans", sans-serif;
+    margin-top: 0; 
+    margin-bottom: 10rem; 
+    padding: 0 20%;
+    line-height: 1.8; 
+    color: rgba(0, 0, 0, 0.676); 
+  }
+
+  p.page-content-left{
+    text-align: left !important;;
+    padding: 0 50% 0 5%;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+
+  a {
+    color: #705294
+  }
+
   
   #from-the-editor{
       margin-bottom: 4rem;
@@ -96,3 +149,11 @@ body {
 #home {
   scroll-margin-top: 90px;
 }
+
+#footer {
+  margin-top: 4rem;
+  border-top: 2px solid rgb(163, 144, 194, 0.5);
+  color: rgba(0, 0, 0, 0.676);
+  font-size: 14px; 
+}
+

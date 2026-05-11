@@ -1,0 +1,113 @@
+.page-content-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 0;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  /* sticky chart on the right */
+  .dv-col {
+    width: 55%;
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
+    padding: 1rem 5rem 1rem 0rem; 
+    z-index: 1;
+  }
+  
+  .dv-box {
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+
+  
+  .scrolly-iframe {
+    width: 100%;
+    border: none;
+    display: block;
+    border-radius: 8px;
+    opacity: opacity; 
+    transition: opacity 400ms ease; 
+  }
+  
+  .scrolly-dv-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #9a7a20;
+  }
+  
+  /* scrolling text on the left */
+  .scrolly-text-col {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 50vh;
+    padding: 1rem 0rem 1rem 5rem; 
+    z-index: 2;
+    position: relative;
+    margin-right: -2.2%;
+  }
+  
+  .scrolly-text-box {
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.64);
+    opacity: 0.45;
+    transform: translateY(8px);
+  }
+  .scrolly-text-box .page-national-politics {
+    background-color: rgb(241, 210, 121, 0.6);
+  }
+  .scrolly-text-box .page-jobs {
+    background-color: rgb(111, 156, 190, 0.6);
+  }
+  
+  .scrolly-text-box p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.64);
+    text-align: left;
+    margin: 0 0 1rem;
+  }
+  
+  .scrolly-text-box p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .scrolly-text-box--active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* mobile */
+  @media (max-width: 768px) {
+    .scrolly-wrapper {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .scrolly-chart-col {
+      width: 100%;
+      position: sticky;
+      top: 60px;
+    }
+  
+    .scrolly-text-col {
+      width: 100%;
+      gap: 2rem;
+      padding: 2rem 0;
+      margin-right: 0;
+    }
+  
+    .scrolly-text-box {
+      opacity: 1;
+      transform: none;
+    }
+  }

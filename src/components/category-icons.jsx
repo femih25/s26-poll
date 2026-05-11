@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 
 const categories = [
-    { name: 'Well-Being', path: '/wellbeing', icon: 'https://img.icons8.com/?size=2000&id=19166&format=png&color=000000', color: "#a0a972"},
-    { name: 'AI', path: '/ai', icon: 'https://img.icons8.com/?size=2000&id=R13upTV7Q1bg&format=png&color=000000', color: "#bedce7"},
-    { name: 'Sports', path: '/sports', icon: 'https://img.icons8.com/?size=2000&id=9817&format=png&color=000000', color: "#f0a94f"},
-    { name: 'Jobs', path: '/jobs', icon: 'https://img.icons8.com/?size=2000&id=2784&format=png&color=000000', color: "#4b7b74"},
-    { name: 'NU Issues', path: '/nu-issues', icon: 'https://img.icons8.com/?size=2000&id=42179&format=png&color=000000', color: "#705294"},
-    { name: 'National Politics', path: '/national-politics', icon: 'https://img.icons8.com/?size=2000&id=4682&format=png&color=000000', color: "#f1d279"},
+    { name: 'Well-Being', className: 'wellbeing', path: '/wellbeing', icon: 'Well-being_Icon.png'},
+    { name: 'AI', path: '/ai', icon: 'AI_Icon.png'},
+    { name: 'Sports', path: '/sports', icon: 'Sports_Icon.png'},
+    { name: 'Career', path: '/jobs', icon: 'Career_Icon.png'},
+    { name: 'NU Issues', path: '/nu-issues', icon: 'NU_Issues_Icon.png'},
+    { name: 'National Politics', path: '/national-politics', icon: 'natpol_icon.png'},
   ]
 
 

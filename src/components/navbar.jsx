@@ -34,7 +34,7 @@ function Navbar(){
                             <li><Link to="/wellbeing" className="wellbeing">Well-Being</Link></li>
                             <li><Link to="/ai" className="AI">AI</Link></li>
                             <li><Link to="/sports" className="sports">Sports</Link></li>
-                            <li><Link to="/jobs" className="jobs">Jobs</Link></li>
+                            <li><Link to="/jobs" className="jobs">Career</Link></li>
                             <li><Link to="/nu-issues" className="nuissues">NU Issues</Link></li>
                             <li><Link to="/national-politics" className="natpolitics">National Politics</Link></li>
                         </ul>
