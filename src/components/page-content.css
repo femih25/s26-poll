@@ -39,7 +39,6 @@
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    color: #9a7a20;
   }
   
   /* scrolling text on the left */
@@ -51,7 +50,6 @@
     padding: 1rem 0rem 1rem 5rem; 
     z-index: 2;
     position: relative;
-    margin-right: -2.2%;
   }
   
   .scrolly-text-box {
