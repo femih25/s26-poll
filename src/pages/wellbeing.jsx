@@ -4,7 +4,12 @@ import DataDashboard from "../components/data-dashboard"
 function Wellbeing() {
     return (
     <div> 
-    <h1>Well-Being</h1>
+    <div id = 'page-intro'> 
+      <h2 className = "page-title">Wildcats are wilding out: Greek life, stress and more </h2>
+      <h3 className = "page-byline">Caroline Altschul and Cydney Waterman</h3>
+      <p className = "intro-blurb">For college undergraduates, well-being can hang in the balance as students navigate academics, relationships and new environments. Factors like alcohol consumption, financial stress and social satisfaction do more than just shape daily life. They can play a large role in determining the student experience.
+      </p>
+    </div> 
     <div style = {{
       border: '2px solid #858864',
       padding: '20px', 
@@ -29,16 +34,16 @@ function Wellbeing() {
     }}>
       <p style = {{
         fontFamily: "'Londrina Solid', sans-serif",
-        fontSize: '50px'
-      }}>STAT1</p>
+        fontSize: '35px'
+      }}>Out of those who never drink, only 7.8% are in Greek life.</p>
       <p style = {{
         fontFamily: "'Londrina Solid', sans-serif",
-        fontSize: '50px'
-      }}>STAT2</p>
+        fontSize: '35px'
+      }}>Social satisfaction is equal across screen times. </p>
       <p style = {{
         fontFamily: "'Londrina Solid', sans-serif",
-        fontSize: '50px'
-      }}>STAT3</p>
+        fontSize: '35px'
+      }}>Of students on financial aid, 47.6% said finances contribute negatively to their well-being.</p>
     </div>
     <div style = {{
       border: '2px solid #858864',
