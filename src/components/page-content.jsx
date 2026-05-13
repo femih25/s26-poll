@@ -49,19 +49,39 @@ const page_content = {
 
     "page-sports": [
         {
-          title: "TKTK",
+          title: "Years and Sports Attendance",
           text: [
-            "TKTKT",
+            "There may be an answer to the question of why Welsh-Ryan Arena’s student section is often sparsely populated. Nearly a quarter of undergraduates said they have never attended an NU sporting event, and 22.6% said they only attend NU sporting events once a year. Still, the avid fan does exist: About 6% reported attending NU sporting events more than six times per quarter.",
+            "When it comes to the students who have yet to experience a game at Martin Stadium or Welsh-Ryan, NU’s newest and oldest classes have the most. About 30% of first-years say they have never attended an NU sporting event — but so do about a quarter of the seniors."
           ],
-          embed: null,
+          embed: 'https://flo.uri.sh/visualisation/28879091/embed',
           height: 550,
         },
         {
-          title: "TKTK",
+          title: "Gender and Sports Engagement",
           text: [
-            "TKTK",
+            "U! Rah! Rah!? More like U! Nah! Nah!, at least for more than 60% of NU students, who said they either disagree or strongly disagree with the statement “Northwestern sports are an important part of my college experience.” Only about a quarter of NU students said they agree, and 13.9% felt neutral about the statement.",
+            "A similar proportion of men and women reported agreeing with that statement, with men surpassing women by only 5.3%. The proportion of both gender categories who reported feeling in the middle are both about 15%. Even the proportions of respondents who “strongly disagree” are nearly neck and neck, with just less than 31% for women and just less than 32% for men."
           ],
-          embed: null,
+          embed: 'https://flo.uri.sh/visualisation/28879218/embed',
+          height: 500,
+        },
+        {
+          title: "Area of Study and Sports Attendance",
+          text: [
+            "Looking at areas of study, journalism students seem to frequent sporting events most often, with about 44.5% reporting that they attend sporting events two or more times per quarter. Trailing by a hair are students studying math, computer science, statistics or data science.",
+            "On the other end, students studying performing and visual arts have the highest percentage reporting that they never attend sporting events at nearly 40%. Just more than a quarter of them say they attend one sporting event per year. The next highest percentage of students who report never attending a sporting event are those studying engineering, at around 25%."
+          ],
+          embed: 'https://flo.uri.sh/visualisation/28902147/embed',
+          height: 500,
+        },
+        {
+          title: "Sports Type",
+          text: [
+            "Responding to which types of NU sports they have watched in person, about 65% selected football and about 55% selected men’s basketball. The next most-selected sport is women’s volleyball, at about 30%.",
+            "All three of these sports are accessible via a walk to Martin Stadium or a bus ride to Welsh-Ryan. Sports located off campus don’t have the same fortune. Namely, women’s golf, women’s cross country, men’s golf and women’s indoor track collectively made up less than 1% of selections."
+          ],
+          embed: 'https://flo.uri.sh/visualisation/28941036/embed',
           height: 500,
         },
       ],
