@@ -185,53 +185,55 @@ const page_content = {
 
 
 
-
-
-
-
 export default function PageContent({ pageKey }) {
     const sections = page_content[pageKey] ?? [] 
     const [activeIndex, setActiveIndex] = useState(0)
-    const scroller = useRef(null)
     const [opacity, setOpacity] = useState(1)
     const [currentEmbed, setCurrentEmbed] = useState(sections[0]?.embed)
     const [currentHeight, setCurrentHeight] = useState(sections[0]?.height || 500)
+    const activeIndexRef = useRef(0)
 
-    const handleStepEnter = ({ index }) => {
-        if (index === activeIndex) return
-        setOpacity(0)
-        setTimeout(() => {
-          setActiveIndex(index)
-          setCurrentEmbed(sections[index]?.embed)
-          setCurrentHeight(sections[index]?.height || 500)
-          setOpacity(1)
-        }, 400)
-      }
-
-      const handleStepExit = ({ index, direction }) => {
-        if (direction === 'down') return  // handled by onStepEnter
-        const prevIndex = index - 1
-        if (prevIndex < 0) return
-        setOpacity(0)
-        setTimeout(() => {
-          setActiveIndex(prevIndex)
-          setCurrentEmbed(sections[prevIndex]?.embed)
-          setCurrentHeight(sections[prevIndex]?.height || 500)
-          setOpacity(1)
-        }, 400)
-      }
-
-  useEffect(() => {
-    scroller.current = scrollama()
-    scroller.current
-      .setup({ step: '.scrolly-step', offset: .95 })
-      .onStepEnter(handleStepEnter)
-       .onStepExit(handleStepExit)
-
-return () => scroller.current.destroy()
-  }, [])
-
-  const active = sections[activeIndex]
+      useEffect(() => {
+        const downScroller = scrollama()
+        const upScroller = scrollama()
+      
+        downScroller
+          .setup({ step: '.scrolly-step', offset: 0.85 })
+          .onStepEnter(({ index, direction }) => {
+            if (direction !== 'down') return
+            if (index === activeIndexRef.current) return
+            activeIndexRef.current = index
+            setOpacity(0)
+            setTimeout(() => {
+              setActiveIndex(index)
+              setCurrentEmbed(sections[index]?.embed)
+              setCurrentHeight(sections[index]?.height || 500)
+              setOpacity(1)
+            }, 400)
+          })
+      
+        upScroller
+          .setup({ step: '.scrolly-step', offset: 0.15 })
+          .onStepEnter(({ index, direction }) => {
+            if (direction !== 'up') return
+            if (index === activeIndexRef.current) return
+            activeIndexRef.current = index
+            setOpacity(0)
+            setTimeout(() => {
+              setActiveIndex(index)
+              setCurrentEmbed(sections[index]?.embed)
+              setCurrentHeight(sections[index]?.height || 500)
+              setOpacity(1)
+            }, 400)
+          })
+      
+        return () => {
+          downScroller.destroy()
+          upScroller.destroy()
+        }
+      }, [])
+      
+      const active = sections[activeIndex]
 
   return (
     <div className="page-content-container">

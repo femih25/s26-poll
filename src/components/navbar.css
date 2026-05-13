@@ -74,10 +74,18 @@
 
  /* For Mobile */
   @media (max-width: 768px) {
+    .navbar {
+      padding: 16px 8px;
+      box-sizing: border-box;
+    }
+    
     .nav-links {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center !important;
         gap: 10px;
         padding: 0.5rem;
+        max-width: 100%;
+        margin: 0;
     }
 
     .nav-links a {

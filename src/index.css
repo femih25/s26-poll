@@ -2,12 +2,18 @@
 
 
 body {
-    background-color: #ECE9F1;
     font-family: "DM Sans", sans-serif; 
     margin: 0 auto; 
     overflow-x: hidden;
     padding-top: 40px;
   }
+
+  #home{
+    background-color: #ECE9F1;
+  }
+
+  body.page-national-politics { background-color: #f1d17950 ; }
+  .page-jobs { background-color: #86b5ad50 !important; }
 
   @media (max-width: 768px) {
     body {
@@ -157,3 +163,23 @@ body {
   font-size: 14px; 
 }
 
+/* big stats */
+.big-stat{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+h2 .stat-num-natpol{
+  font-family: "Londrina Solid", sans-serif;
+  text-shadow: 2px 2px 4px #F1D279;
+  margin: 0; 
+}
+
+p .stat-text-top{
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  margin: 0;
+}

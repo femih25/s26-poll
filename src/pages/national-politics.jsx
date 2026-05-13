@@ -1,9 +1,22 @@
 import DataDashboard from "../components/data-dashboard"
 import PageContent from "../components/page-content"
+import { useEffect } from "react"
+
 
 function NationalPolitics() {
+  useEffect(() => {
+    document.body.classList.add('page-national-politics')
+    return () => document.body.classList.remove('page-national-politics')
+  }, [])
+  
     return (
-    <div> 
+    <div className = 'page-natpol'> 
+
+    <div id = 'big-stat'>
+      <p className = 'stat-text-top'>More than</p>
+      <h1 className = 'stat-num'>92%</h1>
+      <p className = 'stat-text-bottom'>of respondents disapproved of Trump’s job performance</p>
+    </div> 
     <div id = 'page-intro'> 
       <h2 className = "page-title">Immigration enforcement disapproval, high liberalism underscore national politics trends</h2>
       <h3 className = "page-byline">Ryan Ottignon</h3>

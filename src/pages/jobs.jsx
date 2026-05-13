@@ -3,7 +3,7 @@ import PageContent from "../components/page-content"
 
 function Jobs() {
     return (
-    <div> 
+    <div className = 'page-jobs'> 
     <div id = 'page-intro'> 
       <h2 className = "page-title">Students anticipate summer plans, navigate an uncertain job market</h2>
       <h3 className = "page-byline">Grace Sharma</h3>

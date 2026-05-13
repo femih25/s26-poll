@@ -30,3 +30,23 @@
     object-fit: cover; /* Ensure the image fits within the dimensions */
     margin-bottom: 0.5rem; /* Add spacing between the image and title */
 }
+
+.category-tooltip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-family: "DM Sans", sans-serif;
+    opacity: 0.9;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    width: 180px;
+    text-align: center;
+    z-index: 100;
+    color: black;
+  }
+  
+  .category-icon:hover .category-tooltip {
+    display: block;
+  }
