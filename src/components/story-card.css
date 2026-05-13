@@ -1,0 +1,43 @@
+
+.story-card-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if there are too many stories */
+    justify-content: center; /* Center stories horizontally */
+    gap: 2rem; /* Add spacing between stories */
+    padding: 0 2rem 4rem 2rem;
+}
+
+.story-card {
+    position: relative;
+    display: inline-block;
+    max-width: 300px; 
+}
+
+.story-title {
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px; 
+    padding: 4px 12px;
+    width: auto; 
+    max-width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.story-photo {
+    width: 100%; /* Set a fixed width for the images */
+    height: auto; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the image fits within the dimensions */
+    margin-bottom: 0.5rem; 
+    border-radius: 8px;
+}
+
+.story-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: black; 
+}

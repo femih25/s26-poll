@@ -1,0 +1,94 @@
+.navbar{
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    padding: 16px 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%; 
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 95%;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .nav-links a:hover {
+    color: #705294;
+  }
+
+  .nav-links > li {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .nav-links > li:hover {
+    color: #705294;
+    cursor: pointer !important;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white; 
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0.5rem;
+    min-width: 160px;
+    z-index: 999;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-menu .wellbeing:hover { background-color: #C4C992; color: black; }
+  .dropdown-menu .AI:hover { background-color: #BEDCE7; color: black; }
+  .dropdown-menu .sports:hover { background-color: #F0A94F; color: black;}
+  .dropdown-menu .jobs:hover { background-color: #6F9CBE; color: black; }
+  .dropdown-menu .nuissues:hover { background-color: #A390C2; color: black; }
+  .dropdown-menu .natpolitics:hover { background-color: #F1D279; color: black; }
+
+
+
+ /* For Mobile */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 16px 8px;
+      box-sizing: border-box;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center !important;
+        gap: 10px;
+        padding: 0.5rem;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perspectives | The Daily Northwestern</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:Georgia,serif;background:#111;color:#fff;scrollbar-gutter:stable;overscroll-behavior-y:none}
+a{color:#c3b3d5!important;text-decoration:underline;transition:opacity .2s}
+a:hover{opacity:.7}
+#scrolly{position:relative;height:100vh;overflow:hidden}
+.step{position:absolute;inset:0;transform:translateY(100%);transition:transform .55s}
+.step.is-active{transform:translateY(0);z-index:2}
+.step.is-prev{transform:translateY(-100%);z-index:1}
+.no-transition .step{transition:none}
+.slidex-left,.slidex-right{position:absolute;bottom:5rem;width:50%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 4vw;z-index:5;pointer-events:none}
+.slidex-left{left:0;transform:translateX(50%);transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.slidex-right{right:0;opacity:0;transform:translateY(4rem);transition:opacity .5s ease .3s,transform .7s cubic-bezier(.4,0,.2,1) .3s}
+.step.expanded .slidex-left{transform:translateX(0)}
+.step.expanded .slidex-right{opacity:1;transform:translateY(0)}
+.feed-stack{position:absolute;inset:0;pointer-events:none;z-index:5;overflow:hidden}
+.feed-line{position:absolute;bottom:5rem;left:0;right:0;display:flex;justify-content:center;transform:translateY(6rem);opacity:0;transition:transform .65s cubic-bezier(.4,0,.2,1),opacity .65s ease,filter .65s ease}
+.feed-line.feed-current{transform:translateY(0);opacity:1}
+.feed-line.feed-past{transform:translateY(-3rem) scale(.98);opacity:.15;filter:blur(3px);}
+.feed-text{font-size:clamp(1.1rem,2vw,1.7rem);max-width:700px;text-align:center;line-height:1.55;color:rgba(255,255,255,.92)}
+#scrolly-bg{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.scene-bg{position:absolute;inset:0;background:url('gfx/deering.webp') center 40%/cover;will-change:transform;transition:transform .9s cubic-bezier(.4,0,.2,1)}
+.scene-bg-dark{position:absolute;inset:0;background:url('gfx/deering_dark.webp') center 40%/cover;opacity:0;transition:opacity .7s ease-in-out;pointer-events:none}
+.silhouette-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12%;aspect-ratio:3/2}
+.layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;transition:opacity .8s ease,filter .8s ease;z-index:10}
+.slide-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 6vw 5rem;pointer-events:none;z-index:5;text-align:center}
+.slide-main{font-size:clamp(2.5rem,6vw,5.5rem);font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:1rem}
+.slide-sub{font-size:clamp(1rem,1.6vw,1.4rem);color:rgba(255,255,255,.92);max-width:640px;line-height:1.5}
+.slide-sub a{color:#a8d4ff;text-decoration:underline}
+.split-panel{position:absolute;top:0;right:0;width:48%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:6vh 4vw;z-index:5;pointer-events:none}
+.split-divider{position:absolute;top:10%;left:50%;width:1px;height:80%;background:rgba(255,255,255,.25);z-index:6}
+.split-label{font-size:clamp(.65rem,.9vw,.85rem);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.2rem}
+.split-quote{font-size:clamp(1rem,1.5vw,1.35rem);color:rgba(255,255,255,.9);line-height:1.6;font-style:italic}
+.scrolly-btn{position:absolute;left:50%;transform:translateX(-50%);z-index:20;cursor:pointer;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:.4rem 1rem;border-radius:4px;font-size:1rem;transition:opacity .3s,background .3s;backdrop-filter:blur(4px)}
+.scrolly-btn:hover{background:rgba(255,255,255,.3)}
+.scrolly-btn.up{top:1rem}
+.scrolly-btn.down{bottom:1rem}
+.scrolly-btn:disabled{opacity:0;pointer-events:none}
+.scrolly-live-region{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.quadrant-quote-box{position:absolute;top:22%;left:55%;width:38%;z-index:10;transition:left .4s cubic-bezier(.4,0,.2,1),width .4s cubic-bezier(.4,0,.2,1),text-align .4s}
+.notable-quote{font-size:clamp(1.2rem,2vw,1.8rem);line-height:1.4;color:#fff;margin-bottom:1rem;text-shadow:0 2px 15px rgba(0,0,0,.8)}
+.highlight{background:rgba(195,179,213,.55);padding:0 4px;border-radius:2px;color:#fff}
+.quote-attribution{font-style:italic;font-size:clamp(.9rem,1.2vw,1.1rem);color:rgba(255,255,255,.7)}
+.context-fact-box{max-width:850px;min-height:200px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:2.5rem;border-radius:12px;display:flex;flex-direction:column;justify-content:center;text-align:left;box-shadow:0 25px 50px rgba(0,0,0,.5);margin-top:auto}
+.context-fact-box p{margin-bottom:1rem;line-height:1.6}
+.context-fact-box p:last-child{margin-bottom:0}
+.context-fact-box,.quadrant-quote-box,.slide-text,.slidex-left,.slidex-right,.feed-stack{pointer-events:auto}
+.ellipsis-hint{cursor:help;color:#c3b3d5;position:relative;display:inline-block;padding:0 2px}
+.ellipsis-hint::after{content:attr(data-tooltip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.95);color:#fff;padding:1rem;border-radius:6px;font-size:.9rem;font-style:normal;width:280px;white-space:normal;line-height:1.4;opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:100;box-shadow:0 10px 30px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)}
+.quadrant-quote-box .ellipsis-hint::after{left:auto;right:0;transform:none}
+.ellipsis-hint::before{content:"";position:absolute;bottom:110%;left:50%;transform:translateX(-50%);border:8px solid transparent;border-top-color:rgba(0,0,0,.95);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.quadrant-quote-box .ellipsis-hint::before{left:auto;right:5px;transform:none}
+.ellipsis-hint:hover::after,.ellipsis-hint:hover::before{opacity:1}
+
+#scrolly-bg.state-zoomed .scene-bg{transform:scale(2.7) translate(-.3%,-5%)}
+#scrolly-bg.state-dark .scene-bg-dark{opacity:1}
+#scrolly-bg.state-sil-left .sil-mid,
+#scrolly-bg.state-sil-left .sil-right{opacity:0}
+#scrolly-bg.state-sil-left .sil-left{opacity:1}
+#scrolly-bg.state-sil-mid .sil-left,
+#scrolly-bg.state-sil-mid .sil-right{opacity:0}
+#scrolly-bg.state-sil-mid .sil-mid{opacity:1;}
+#scrolly-bg.state-sil-right .sil-left,
+#scrolly-bg.state-sil-right .sil-mid{opacity:0}
+#scrolly-bg.state-quote-left ~ .step .quadrant-quote-box{left:7%;width:40%;text-align:right}
+#scrolly-bg.state-quote-left ~ .step .quadrant-quote-box .ellipsis-hint::after{right:auto;left:0;transform:none}
+#scrolly-bg.state-quote-left ~ .step .quadrant-quote-box .ellipsis-hint::before{right:auto;left:5px;transform:none}
+
+@media(max-width:768px){
+  .slide-main{font-size:clamp(2rem,8vw,3rem)}
+  .slide-sub{font-size:clamp(.9rem,3.5vw,1.1rem)}
+  .split-panel{width:52%;padding:4vh 3vw}
+  .split-quote{font-size:clamp(.85rem,3vw,1rem)}
+  .feed-text{font-size:clamp(.95rem,3.5vw,1.2rem)}
+}
+</style>
+</head>
+<body>
+<main>
+<article>
+<section id="scrolly" aria-label="Interactive graphic slideshow">
+  <div id="scrolly-bg" aria-hidden="true">
+    <div class="scene-bg">
+      <div class="scene-bg-dark"></div>
+      <div class="silhouette-container">
+        <img src="gfx/silhouette_left.webp" class="layer sil-left" alt="">
+        <img src="gfx/silhouette_mid.webp" class="layer sil-mid" alt="">
+        <img src="gfx/silhouette_right.webp" class="layer sil-right" alt="">
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="scrolly-btn up" data-scrolly-prev aria-label="Previous slide" disabled><span aria-hidden="true">↑</span></button>
+  <button type="button" class="scrolly-btn down" data-scrolly-next aria-label="Next slide"><span aria-hidden="true">↓</span></button>
+  <div role="status" class="scrolly-live-region" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="step is-active" data-slide="1" role="group" aria-label="Slide 1" aria-hidden="false">
+    <div class="slide-text">
+      <div class="slide-main">$790 million</div>
+      <div class="slide-sub">of Northwestern's <a href="https://dailynorthwestern.com/2025/04/08/top-stories/federal-government-freezes-790-million-in-funding-for-northwestern/">federal research funding</a> was frozen by the Trump administration on April 8, 2025.</div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="2" role="group" aria-label="Slide 2" aria-hidden="true">
+    <div class="slide-text">
+      <div class="slide-main">7 months later</div>
+      <div class="slide-sub">NU struck a deal to <a href="https://dailynorthwestern.com/2025/11/28/campus/northwestern-strikes-deal-with-trump-administration-to-restore-federal-funding/">restore</a> federal research funding and end federal investigations into the University. The agreement required NU to pay the federal government $75 million and make several concessions.</div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="3" data-expandable role="group" aria-label="Slide 3" aria-hidden="true">
+    <div class="slidex-left">
+      <div class="slide-sub">More than</div>
+      <div class="slide-main">one-third</div>
+      <div class="slide-sub">of respondents opposed the University's decision to sign the deal with the Trump administration,</div>
+    </div>
+    <div class="slidex-right">
+      <div class="slide-sub">and</div>
+      <div class="slide-main">one-fifth</div>
+      <div class="slide-sub">were not familiar enough with the terms to form an opinion.</div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="4" data-expandable role="group" aria-label="Slide 4" aria-hidden="true">
+    <div class="slidex-left">
+      <div class="slide-sub">Split by gender of respondents,</div>
+      <div class="slide-main">38.6%</div>
+      <div class="slide-sub">of women opposed the federal deal.</div>
+    </div>
+    <div class="slidex-right">
+      <div class="slide-sub">That's compared to</div>
+      <div class="slide-main">29.5%</div>
+      <div class="slide-sub">of men.</div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="5" data-feed data-feed-count="3" role="group" aria-label="Slides 5, 6, and 7" aria-hidden="true">
+    <div class="feed-stack">
+      <div class="feed-line" data-feed-index="0">
+        <div class="feed-text">More than half of LGBTQ+ respondents opposed the deal, compared to one-fourth of their non-LGBTQ+ peers.</div>
+      </div>
+      <div class="feed-line" data-feed-index="1">
+        <div class="feed-text">Jewish respondents were twice as likely to support the deal as their non-Jewish peers.</div>
+      </div>
+      <div class="feed-line" data-feed-index="2">
+        <div class="feed-text">Among respondents who had an opinion on the deal, those on financial aid were 26.7% more likely to oppose the deal than their peers not on financial aid.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="8" role="group" aria-label="Slide 8" aria-hidden="true">
+    <div class="slide-text">
+      <div class="slide-main" style="font-size:clamp(1.6rem,3vw,2.8rem)">Here's what some undergraduates had to say about the deal.</div>
+      <div class="slide-sub">In the Spring 2026 poll, respondents had the option to provide an open-ended response to the question: "Is there anything else you'd like to share about your perspective on this deal?"</div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="9" role="group" aria-label="Slide 9" aria-hidden="true">
+    <div class="slide-text">
+      <div class="slide-main" style="font-style:italic;font-size:clamp(1.6rem,3vw,2.8rem)">
+        Some students who supported the deal cited the restoration of research funding.
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="10" role="group" aria-label="Slide 10" aria-hidden="true">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "University would've been hurt by a <span class="highlight">continued loss of funding.</span> Signing the deal was necessary."
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "support" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>When the deal was made on Nov. 28, the accrued cost in internal funding for frozen research grants had reached about $350 million, according to the Office of the President website.</p>
+        <p>"At a cost of $40 million a month, this was simply not sustainable," Bienen said in a Q&A video published on the Office of the President's website.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="11" role="group" aria-label="Slide 11">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "The situation is a terrible one to be in, but <span class="highlight">thousands of graduate students at Northwestern rely upon this federal funding for their livelihood.</span> <span class="ellipsis-hint" data-tooltip="I wish some of the terms were not what they were, and I deeply despise the Trump administration for putting academic institutions like Northwestern in this position, but unfortunately at the end of the day students must have food to eat and a roof to sleep under.">...</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "strongly support" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>In addition to fueling research for labs across campus, research grants also support some stipends for graduate students. Due to decreased cashflow during the freeze, universities across the country have decreased the amount of students they accept into graduate programs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="12" role="group" aria-label="Slide 12">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "The totality of the agreement is disgusting <span class="ellipsis-hint" data-tooltip="and goes against the inclusive principles that I thought defined our schools beliefs">...</span> . On the other hand, I know people <span class="highlight">who lost their jobs at Northwestern because of the freeze and others who couldn't continue their important research,</span> like cancer research, because of the lack of funding. <span class="ellipsis-hint" data-tooltip="I think it's hard to think of this issue as a black and white situation because with or without the agreement the Northwestern community is getting hurt.">...</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "neither support nor oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>NU implemented a faculty and staff <a href="https://dailynorthwestern.com/2025/06/10/lateststories/northwestern-administration-announces-hiring-freeze-academic-permanent-budget-reductions/">hiring freeze</a> two months after the funding freeze was announced and eliminated more than <a href="https://dailynorthwestern.com/2025/07/29/lateststories/northwestern-to-eliminate-more-than-400-staff-positions-amid-mounting-financial-pressures/">400 staff positions</a> — half of which were vacant at the time — at the end of July. The hiring freeze <a href="https://dailynorthwestern.com/2026/01/10/lateststories/northwestern-hiring-freeze-is-over-bienen-confirms/">ended in January</a>, Bienen said in a Jan. 9 interview with The Daily.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="13" role="group" aria-label="Slide 13">
+    <div class="slide-text">
+      <div class="slide-main" style="font-style:italic;font-size:clamp(1.6rem,3vw,2.8rem)">
+        Some students voiced frustration with the concessions made to the Trump administration in this agreement.
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="14" role="group" aria-label="Slide 14">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "<span class="ellipsis-hint" data-tooltip="The deal horrified but did not surprise me. Since I got here it's been clear how willing Northwestern is to sell out its students and its academics. But">...</span> even I didn't expect the administration to stoop so low as <span class="highlight">officially adopting the Trump administration's definition of and positions on gender and transness.</span> <span class="ellipsis-hint" data-tooltip="I am disgusted by Northwestern's hostility towards trans and feminist communities.">...</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "strongly oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>The agreement requires the University to follow sex defined as an "immutable biological classification as either male or female" in a January executive order. NU claimed that "no restrictions" were placed on <a href="https://dailynorthwestern.com/2025/12/19/campus/northwestern-claims-the-federal-funding-deal-will-not-restrict-its-trans-community-students-worry-otherwise/">its transgender community</a>.</p>
+        <p>NU and the Feinberg School of Medicine also agreed not to perform gender-affirming care on minors. According to the Office of the President's website, the University has "never performed gender-affirming surgeries for minors."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="15" role="group" aria-label="Slide 15">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "I understand that they needed to protect funding for important research, but basically <span class="highlight">backing down on all of the points that students fought for during the encampment</span> is wild."
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>The Deering Meadow Agreement ended the <a href="https://dailynorthwestern.com/2024/04/29/campus/breaking-administrators-student-demonstrators-reach-agreement-to-end-encampment/">five-day pro-Palestinian encampment</a>. In the resolution, the University agreed to reverse the policies of the agreement, including reestablishing the Advisory Committee on Investment Responsibility and supporting at least <a href="https://dailynorthwestern.com/2025/05/05/campus/qa-visiting-prof-mkhaimar-abusada-talks-growing-up-in-gaza-teaching-at-northwestern/">one Palestinian visiting faculty member</a>.</p>
+        <p>This also came alongside federal investigations related to antisemitism on campus, which were resolved as part of this deal.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="16" role="group" aria-label="Slide 16">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "I'm upset that the deal quietly terminated the Deering Agreement, delivering a blow to students' freedom of expression and <span class="highlight">harming the (Middle Eastern and North African) community at Northwestern.</span> <span class="ellipsis-hint" data-tooltip="I'm also concerned about the harmful implications of this deal for transgender students and (diversity, equity and inclusion) programs.">...</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>As part of the terms of the Deering Meadow Agreement, NU provided a temporary space for the MENA Student Association and the Muslim-cultural Students Association, which is no longer available following this deal.</p>
+        <p>According to the Office of the President's website, the University will partner with alumni to "explore off-campus, privately owned locations."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="17" role="group" aria-label="Slide 17">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "<span class="ellipsis-hint" data-tooltip="I'm upset that the deal quietly terminated the Deering Agreement, delivering a blow to students' freedom of expression and harming the MENA community at Northwestern.">...</span> I'm also concerned about the harmful implications of this deal for transgender students and <span class="highlight">DEI programs.</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>NU agreed to only consider academic and professional merit for its hiring practices as part of the deal. The University also removed its requirement for "diversity statements" for faculty during the hiring process.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="18" role="group" aria-label="Slide 18">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "I'm seriously concerned about how this deal is going to impact <span class="highlight">free speech at Northwestern.</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>Vice President for Student Affairs Susan Davis released a <a href="https://dailynorthwestern.com/2026/04/24/campus/the-daily-explains-inside-the-recent-campus-climate-survey-created-after-northwesterns-deal-with-the-trump-administration/">campus climate survey</a> in an April 7 email to NU students.</p>
+        <p>The survey was required as part of the deal, and included questions about whether students feel welcome on campus and safe reporting various forms of harassment and discrimination.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="19" role="group" aria-label="Slide 19">
+    <div class="slide-text">
+      <div class="slide-main" style="font-style:italic;font-size:clamp(1.6rem,3vw,2.8rem)">
+        Some students believed the University should not have opted for a deal at all.
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="20" role="group" aria-label="Slide 20">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "<span class="highlight">Bienen is showing weakness by giving into the administration's demands.</span> In the short term it might seem better, but now the administration knows exactly what and how to play us to get what they want. <span class="ellipsis-hint" data-tooltip="It's a stupid long-term decision that can have disastrous consequences.">...</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>Among students who self-reported that they understood the terms of the deal, 33.4% disapproved of Bienen's job performance.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="21" role="group" aria-label="Slide 21">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "Universities are supposed to be the hub of resistance in a nation. <span class="highlight">I'm disappointed that we caved.</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>NU joined five other higher education institutions, including the University of Pennsylvania and Columbia University, as the <a href="https://dailynorthwestern.com/2025/11/29/campus/the-daily-explains-how-northwesterns-deal-compares-to-other-university-agreements-with-trump-administration/">sixth university</a> to finalize a deal with the Trump administration.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="22" role="group" aria-label="Slide 22">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "We should have sued their asses. <span class="highlight">Harvard did it. And won.</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>As of now, Harvard University is the only institution to have brought the Trump administration to court.</p>
+        <p>In September 2025, a federal judge ruled in Harvard's favor that the $2 billion in federal grants and contracts frozen violated Harvard's First Amendment rights. The majority of funding has since been restored.</p>
+        <p>Bienen told The Daily in an <a href="https://dailynorthwestern.com/2025/10/24/campus/president-henry-bienen-talks-federal-funding-freeze-bias-training-qatar-campus/">Oct. 24 interview</a> that he did not want to sue the Trump administration.</p>
+        <p>"Fighting the federal government is an incredibly difficult thing to do," Bienen said. "In law, any other way — it's very expensive."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-slide="23" role="group" aria-label="Slide 23">
+    <div class="quadrant-quote-box">
+      <div class="notable-quote">
+        "<span class="ellipsis-hint" data-tooltip="I understand the need to restore funding, but I am more concerned about capitulating to a hostile federal government.">...</span> I am <span class="highlight">worried about what precedent signing this deal sets for the future of academic freedom at Northwestern.</span>"
+      </div>
+      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+    </div>
+    <div class="slide-text">
+      <div class="context-fact-box">
+        <p>The deal will remain in effect for three years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</article>
+</main>
+
+<script>
+class ScrollySlides {
+  constructor({container="#scrolly",step=".step",duration=700}={}) {
+    this.container=document.querySelector(container);
+    if(!this.container)return;
+    this.steps=Array.from(this.container.querySelectorAll(step));
+    this.duration=duration;
+    this.index=0;
+    this.total=this.steps.length;
+    this.isAnimating=false;
+    this.currentFeedStep=null;
+    this.btnNext=this.container.querySelector("[data-scrolly-next]");
+    this.btnPrev=this.container.querySelector("[data-scrolly-prev]");
+    this.liveRegion=this.container.querySelector(".scrolly-live-region");
+    this.sharedBg=document.getElementById("scrolly-bg");
+    this.handleWheel=this.handleWheel.bind(this);
+    this.handleKeydown=this.handleKeydown.bind(this);
+    this.bindEvents();
+    this.container.classList.add("no-transition");
+    this.goTo(0,false);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>this.container.classList.remove("no-transition")));
+  }
+
+  bindEvents() {
+    this.container.addEventListener("wheel",this.handleWheel,{passive:false});
+    window.addEventListener("keydown",this.handleKeydown);
+    this.btnNext?.addEventListener("click",()=>this.next());
+    this.btnPrev?.addEventListener("click",()=>this.prev());
+  }
+
+  handleWheel(e) {
+    if(Math.abs(e.deltaY)<50)return;
+    e.preventDefault();
+    if(this.isAnimating)return;
+    e.deltaY>0?this.next():this.prev();
+  }
+
+  handleKeydown(e) {
+    if(e.key==="ArrowDown"){e.preventDefault();this.next();}
+    else if(e.key==="ArrowUp"){e.preventDefault();this.prev();}
+  }
+
+  setFeedCursor(step,cursor) {
+    step.dataset.feedCursor=cursor;
+    step.querySelectorAll(".feed-line").forEach(line=>{
+      const i=parseInt(line.dataset.feedIndex);
+      line.classList.remove("feed-current","feed-past");
+      if(i===cursor)line.classList.add("feed-current");
+      else if(i<cursor)line.classList.add("feed-past");
+    });
+  }
+
+  resetFeed(step) {
+    step.dataset.feedCursor=0;
+    step.querySelectorAll(".feed-line").forEach(l=>l.classList.remove("feed-current","feed-past"));
+  }
+
+  next() {
+    const cur=this.steps[this.index];
+    if(cur.hasAttribute("data-expandable")&&!cur.classList.contains("expanded")){
+      cur.classList.add("expanded");
+      this.isAnimating=true;
+      setTimeout(()=>this.isAnimating=false,this.duration);
+      return;
+    }
+    if(cur.hasAttribute("data-feed")){
+      const count=parseInt(cur.dataset.feedCount)||1;
+      const cursor=parseInt(cur.dataset.feedCursor)||0;
+      if(cursor<count-1){
+        this.isAnimating=true;
+        this.setFeedCursor(cur,cursor+1);
+        setTimeout(()=>this.isAnimating=false,this.duration);
+        return;
+      }
+    }
+    if(this.index<this.total-1)this.goTo(this.index+1);
+  }
+
+  prev() {
+    const cur=this.steps[this.index];
+    if(cur.hasAttribute("data-feed")){
+      const cursor=parseInt(cur.dataset.feedCursor)||0;
+      if(cursor>0){
+        this.isAnimating=true;
+        this.setFeedCursor(cur,cursor-1);
+        setTimeout(()=>this.isAnimating=false,this.duration);
+        return;
+      }
+    }
+    if(this.index>0)this.goTo(this.index-1);
+  }
+
+  goTo(i,animate=true) {
+    if(this.isAnimating||i<0||i>=this.total)return;
+    this.isAnimating=animate;
+
+    if(this.currentFeedStep&&this.currentFeedStep!==this.steps[i])
+      this.resetFeed(this.currentFeedStep);
+
+    this.index=i;
+
+    this.steps.forEach((step,idx)=>{
+      const nearby=Math.abs(idx-i)<=1;
+      step.hidden=!nearby;
+      step.classList.remove("is-active","is-prev");
+      if(nearby){
+        if(idx<i)step.classList.add("is-prev");
+        if(idx===i)step.classList.add("is-active");
+      }
+      step.setAttribute("aria-hidden",String(idx!==i));
+    });
+
+    const activeStep=this.steps[i];
+
+    if(activeStep.hasAttribute("data-feed")){
+      this.currentFeedStep=activeStep;
+      setTimeout(()=>this.setFeedCursor(activeStep,0),animate?400:0);
+    } else {
+      this.currentFeedStep=null;
+    }
+
+    if(this.sharedBg){
+      const slideNum=activeStep.getAttribute("data-slide")||String(i+1);
+      this.sharedBg.setAttribute("data-active-slide",slideNum);
+      const n=parseInt(slideNum);
+      this.sharedBg.classList.remove("state-zoomed","state-dark","state-sil-left","state-sil-mid","state-sil-right");
+      if(n>=8)this.sharedBg.classList.add("state-zoomed");
+      if(n>=9)this.sharedBg.classList.add("state-dark");
+      if(n===9||n===10||n===11||n===12)this.sharedBg.classList.add("state-sil-left");
+      else if(n>=13&&n<=18)this.sharedBg.classList.add("state-sil-mid");
+      else if(n>=19&&n<=23)this.sharedBg.classList.add("state-sil-right");
+      clearTimeout(this._quoteLeftTimer);
+      if(n>=20){
+        this.sharedBg.classList.add("state-quote-left");
+      } else if(n===19){
+        this.sharedBg.classList.remove("state-quote-left");
+        this._quoteLeftTimer=setTimeout(()=>this.sharedBg.classList.add("state-quote-left"),animate?this.duration:0);
+      } else {
+        this.sharedBg.classList.remove("state-quote-left");
+      }
+    }
+
+    if(this.liveRegion&&animate)
+      this.liveRegion.textContent=`Slide ${i+1} of ${this.total}`;
+    if(this.btnNext)this.btnNext.disabled=this.index===this.total-1;
+    if(this.btnPrev)this.btnPrev.disabled=this.index===0;
+    this.container.dispatchEvent(new CustomEvent("scrollychange",{detail:{index:this.index}}));
+    if(animate)setTimeout(()=>this.isAnimating=false,this.duration);
+  }
+}
+
+new ScrollySlides();
+</script>
+</body>
+</html>
