@@ -12,7 +12,7 @@ function Home() {
 
     return(
     <div id = "home"> 
-      <h1 id =" title">The Daily Northwestern's <br /> Spring 2026 Poll</h1>
+      <h1 id =" title">THE DAILY NORTHWESTERN'S <br /> SPRING 2026 POLL</h1>
       <p>The latest edition of The Daily's biannual student poll is here! <br></br> 
       Take a look around.</p>
 

@@ -4,19 +4,17 @@ import './data-dashboard.css';
 
 const page_data = {
     "page-wellbeing":[
-        {label: "WELL-BEING", embed: null}, 
+        {label: "WELL-BEING", embed: "https://flo.uri.sh/visualisation/28860811/embed"}, 
         {label: "SCREEN TIME", embed: "https://flo.uri.sh/visualisation/28858612/embed"},
         {label: "ALCOHOL", embed: "https://flo.uri.sh/visualisation/28856052/embed"},
         {label: "DRUGS", embed: "https://flo.uri.sh/visualisation/28859240/embed"},
-        {label: "SOCIAL SATISFACTION", embed: "https://flo.uri.sh/visualisation/28912941/embed"},
+        {label: "SOCIAL SATISFACTION", embed: "https://flo.uri.sh/visualisation/28912325/embed"},
         {label: "NU SATISFACTION", embed: "https://flo.uri.sh/visualisation/28912548/embed"},
     ], 
     "page-ai":[
-        {label: "ai1", embed: null}, 
-        {label: "ai2", embed: null},
-        {label: "ai3", embed: null},
-        {label: "ai4", embed: null},
-        {label: "ai5", embed: null},
+        {label: "IMPACT ON ACADEMICS", embed: "https://flo.uri.sh/visualisation/28912303/embed"}, 
+        {label: "IMPACT ON SOCIETY", embed: "https://flo.uri.sh/visualisation/28912576/embed"},
+        {label: "IMPACT ON CAREERS", embed: "https://flo.uri.sh/visualisation/28912941/embed"},
     ], 
     "page-sports":[
         {label: "ENGAGEMENT", embed: "https://flo.uri.sh/visualisation/28859190/embed"}, 
@@ -26,25 +24,25 @@ const page_data = {
         {label: "sports5", embed: null},
     ], 
     "page-jobs":[
-        {label: "INTERNSHIPS", embed: "https://flo.uri.sh/visualisation/28860252/embed"}, 
-        {label: "jobs2", embed: null},
-        {label: "jobs3", embed: null},
-        {label: "jobs4", embed: null},
-        {label: "jobs5", embed: null},
+        {label: "CONCERNS", embed: "https://flo.uri.sh/visualisation/28872882/embed"}, 
+        {label: "APPLICATIONS", embed: "https://flo.uri.sh/visualisation/28860252/embed"},
+        {label: "SUMMER PLANS", embed: "https://flo.uri.sh/visualisation/28860416/embed"},
+        {label: "JOB MARKET", embed: "https://flo.uri.sh/visualisation/28873879/embed"},
     ],
     "page-nu-issues":[
-        {label: "nu-issues1", embed: null}, 
-        {label: "nu-issues2", embed: null},
+        {label: "ISLAMOPHOBIA PERCEPTION", embed: "https://flo.uri.sh/visualisation/28912975/embed"}, 
+        {label: "ISLAMOPHOBIA EXPERIENCE", embed: "https://flo.uri.sh/visualisation/28913208/embed"},
         {label: "nu-issues3", embed: null},
         {label: "nu-issues4", embed: null},
         {label: "nu-issues5", embed: null},
     ], 
     "page-national-politics":[
-        {label: "POLITICAL LEAN + TRUMP APPROVAL", embed: "https://dailydv.netlify.app/polling/yty.html"}, 
-        {label: "LGBTQ+ POLITICAL LEAN", embed: "https://dailydv.netlify.app/polling/qp.html"},
-        {label: "POLITICAL LEAN + ISLAMOPHOBIA/ANTISEMITISM", embed: "https://dailydv.netlify.app/polling/asip.html"},
-        {label: "national-politics4", embed: null},
-        {label: "national-politics5", embed: null},
+        {label: "POLITICAL LEANING", embed: "https://flo.uri.sh/visualisation/28930603/embed"}, 
+        {label: "POLITICAL INTENSITY", embed: "https://flo.uri.sh/visualisation/28930730/embed"},
+        {label: "TRUMP APPROVAL", embed: "https://flo.uri.sh/visualisation/28930803/embed"},
+        {label: "WAR IN IRAN", embed: "https://flo.uri.sh/visualisation/28930867/embed"},
+        {label: "ICE", embed: "https://flo.uri.sh/visualisation/28930893/embed"},
+        {label: "NU IMMIGRATION POLICIES", embed: "https://flo.uri.sh/visualisation/28930978/embed"},
     ]
 }; 
 

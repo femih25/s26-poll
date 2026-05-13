@@ -26,25 +26,74 @@ const page_content = {
           embed: 'https://flo.uri.sh/visualisation/28875954/embed',
           height: 500,
         },
+        {
+          title: 'Doomscrollers may have rotted their brains, but they might not have spoiled their social skills.', 
+          text: [
+            "Despite differences in reported amount of  time spent on their phone, respondents indicate similar levels of social satisfaction at NU. About 80% of respondents who said they spent six to eight hours on their phones said they were satisfied with their social lives at NU, just more than 2% lower than respondents that spend less than four to six hours on their phones.", 
+            "Another surprise was that the people who spent eight or more hours on their phones beat out the other phone screen time categories in the “very satisfied” category by a small margin, with all breakdowns falling within four percentage points between each other. Again, though the margin was very small, it defies expectations.",
+            "Sophomores are the most likely to be very unsatisfied with their social lives at about 30% and both sophomores and seniors spend the most time on their phones."
+          ], 
+          embed: 'https://flo.uri.sh/visualisation/28879164/embed',
+          height: 500 
+        }, 
+        {
+          title: 'Students on financial aid aren’t making it rain. They are drowning in stress.', 
+          text: [
+            "According to Northwestern Admissions, 60% of NU students receive financial aid, claiming that the University meets “100% of every student’s demonstrated financial need.” Additionally, about 20% of first-year students are eligible for federal Pell Grants. Undergraduates who receive financial aid say that finances are one of their major stressors. Nearly half of respondents on financial aid reported that finances contribute negatively to their well-being.",
+            "In contrast, students who do not receive financial aid are substantially more likely to be stress-free when it comes to finances, with 68.9% reporting no impact.", 
+            "Out of all respondents, 59% said that finances have no impact on their well-being."
+          ], 
+          embed: 'https://flo.uri.sh/visualisation/28856199/embed', 
+          height: 500 
+        }
       ],
 
     "page-ai": [
         {
-          title: "TKTK",
+          title: "Effects on education",
           text: [
-            "TKTK",
+            "Over the last year, students have developed a more negative perspective on AI’s impact on their education.",
+            "", 
+            "In spring 2025, 31.6% of respondents agreed that AI made them a better student, of which 11.1% strongly agreed with the statement.", 
+            "This year, 62.1% of undergraduates indicated their disagreement, a 27.4% uptick from last year.",
+            <>These results come as some {""}<a href = "https://dailynorthwestern.com/2026/05/05/campus/some-northwestern-professors-give-exams-more-weight-in-grades-due-to-student-ai-usage/">NU classes increase the weight of exams</a>{""} to discourage AI usage and as the school begins to {""}<a href = "https://dailynorthwestern.com/2026/03/10/campus/northwestern-announces-new-ai-major-beginning-fall-2026/">offer an Al major.</a> Moreover, a Lumina Foundation-Gallup study found that more than half of the college students surveyed use AI on class work at least once a week."</>
           ],
-          embed: null,
+          embed: 'https://flo.uri.sh/visualisation/28878747/embed',
           height: 550,
         },
         {
-          title: "TKTK",
+          title: "Academic growth",
           text: [
-            "TKTK",
+            "A majority of students across all years disagreed that artificial intelligence is beneficial to their educational development.",
+            "Almost half of seniors strongly disagreed with the statement, far exceeding any other grade. About 30% of sophomores disagreed and approximately the same proportion strongly disagreed, while juniors reflected similar patterns.", 
+            "Still, a smaller number of students across all years agreed with the statement. More than 20% of sophomores agreed, with juniors close behind, followed by seniors and first-years at about 15% each. Strong agreement remained very low across all years, at 5% for first-years and about 3% for the other groups.",
+            "A moderate share of students neither agreed nor disagreed, including 22% of first-years, nearly 20% of juniors, 15% of sophomores and 13% of seniors.",
           ],
-          embed: null,
+          embed: 'https://flo.uri.sh/visualisation/28901072/embed',
           height: 500,
         },
+        {
+          title: "Professional impacts",
+          text: [
+            "Humanities and social sciences students make up 52.8% of respondents for the entire Spring 2026 Poll, which accounts for its large representation in the question response visualization.", 
+            "Still, humanities and social sciences majors account for much more of the proportion that disagreed or strongly disagreed that AI gives them a positive outlook on their future career, compared to their portion of individuals that agreed with the statement.", 
+            "Life and physical sciences majors made up 28.9% of students that agreed with the statement, compared to its proportion in other categories that hover between 14 to 17%. Math, computer science, statistics and data science majors, on the other hand, posted nearly identical numbers. Engineering majors followed a similar trend.", 
+            "The degree of agreement varied between groups. Humanities majors accounted for just under 33% of those who agreed or strongly agreed, and life and physical sciences majors were only two percent behind."
+          ],
+          embed: 'https://flo.uri.sh/visualisation/28911208/embed',
+          height: 500,
+        },
+        {
+          title: "Concerns by political leaning",
+          text: [
+            "At a national level, Democrats and Republicans seemed united in their concerns about AI, according to a recent poll by NBC News. Yet, NU students do not seem to be following this particular trend.", 
+            "Among those who self-identified as moderate or conservative, 50.9% of them agreed that AI will impact their future career. In this group, 18.3% of respondents “strongly agreed.”", 
+            "Of those who identified themselves as very liberal, 32.9% disagreed with the statement. Another 33.8% “strongly disagreed” with the statement.", 
+            "Students who identified themselves as liberal landed in the middle. About 36% of them reported neither agreeing or disagreeing with the statement.", 
+          ],
+          embed: 'https://flo.uri.sh/visualisation/28877588/embed', 
+          height: 500, 
+        }
       ],
 
     "page-sports": [
@@ -136,21 +185,38 @@ const page_content = {
 
     "page-nu-issues": [
         {
-          title: "TKTK",
+          title: "Who supports the funding deal?",
           text: [
-            "TKTK",
+            <>Following a $790 million funding freeze, NU struck an agreement on Nov. 28 with the Trump administration to {""}<a href = "https://dailynorthwestern.com/2025/11/28/campus/northwestern-strikes-deal-with-trump-administration-to-restore-federal-funding/">restore federal research funding</a>{""} and end federal investigations into the University.</>, 
+            "NU agreed to pay $75 million to the federal government, terminated the Deering Meadow Agreement, increased policies to combat antisemitism and updated faculty hiring policies.", 
+            <>NU joined {""}<a href = "https://dailynorthwestern.com/2025/11/29/campus/the-daily-explains-how-northwesterns-deal-compares-to-other-university-agreements-with-trump-administration/">five other higher education institutions,</a> including the University of Pennsylvania and Columbia University, in striking a deal to restore federal funding.</>, 
+            "Support for the deal varied across students’ political leanings. Of moderate and conservative students, 60.3% supported the deal, as compared to 30.5% of “liberal” students and 10.5% of “very liberal” students.", 
           ],
-          embed: null,
+          embed: 'https://flo.uri.sh/visualisation/28876441/embed',
           height: 550,
         },
         {
-          title: "TKTK",
+          title: "Impact of NU's next president",
           text: [
-            "TKTK",
+            "Following the resignation of former President Michael Schill in early September, Bienen took the reins in an interim capacity. The Presidential Search Committee is now seeking Bienen’s successor, with a decision projected for this spring.",
+            "The anticipation and expectation for the next president’s actions dwindle as students progress through their academic years. Only 25.8% of seniors believe the next president’s decisions will impact the undergraduate student experience, compared to 49.9% of first-year students.", 
+            "Both Schill and Bienen have been navigating an unusually turbulent higher education landscape, but the primary tension with the federal government, research funding and federal investigations, has stopped. Now, students could be anticipating the way the next president deals with the aftermath and how it might impact their NU experience.", 
           ],
-          embed: null,
+          embed: 'https://flo.uri.sh/visualisation/28877577/embed',
           height: 500,
         },
+        {
+          title: 'Antisemitism in 2025 vs 2026',
+          text: [
+            "Jewish students are substantially more likely to personally experience or know someone who experienced antisemitism on campus. There is a 48.4% gap between Jewish and non-Jewish respondents. This is an increase from the 44% gap in the poll one year ago.", 
+            "About 66% of Jewish students responded ‘Yes’ to this poll question, an 8.4% increase from last spring.", 
+            "Twenty-three percent of Jewish students were also more likely to support the federal deal than non-Jewish students.", 
+            "These responses come at a crucial time as more higher education institutions are under scrutiny for their treatment of Jewish students." 
+
+          ], 
+          embed: 'https://flo.uri.sh/visualisation/28878793/embed', 
+          height: 550, 
+        }
       ],
 
 
@@ -283,19 +349,28 @@ export default function PageContent({ pageKey }) {
       </div>
 
       <div className="scrolly-text-col">
-        {sections.map((section, i) => (
-          <div
-            key={i}
-            className={`scrolly-step scrolly-text-box ${i === activeIndex ? 'scrolly-text-box--active' : ''}`}
-          >
-            {section.title && <h3 className="scrolly-section-title">{section.title}</h3>}
-            {Array.isArray(section.text)
-              ? section.text.map((para, j) => <p key={j}>{para}</p>)
-              : <p>{section.text}</p>
-            }
-          </div>
-        ))}
-      </div>
+  {sections.map((section, i) => (
+    <div
+      key={i}
+      className={`scrolly-step scrolly-text-box ${i === activeIndex ? 'scrolly-text-box--active' : ''}`}
+    >
+      {section.embed && (
+        <iframe
+          src={section.embed}
+          title={`mobile-dv-${i}`}
+          className="mobile-embed"
+          height={section.height || 500}
+          allowFullScreen
+        />
+      )}
+      {section.title && <h3 className="scrolly-section-title">{section.title}</h3>}
+      {Array.isArray(section.text)
+        ? section.text.map((para, j) => <p key={j}>{para}</p>)
+        : <p>{section.text}</p>
+      }
+    </div>
+  ))}
+</div>
 
     </div>
   )

@@ -93,39 +93,35 @@
     .page-content-container {
       flex-direction: column;
       padding: 1rem;
-      position: relative;
     }
   
     .dv-col {
-      width: 100%;
-      position: sticky;
-      top: 60px;          
-      height: 50vh;
-      padding: 0.5rem 0;
-      z-index: 10;
-      order: -1;
-    }
-  
-    .dv-box {
-      height: 100%;
-    }
-  
-    .scrolly-iframe {
-      height: 100% !important;
+      display: none;  /* hide sticky graph */
     }
   
     .scrolly-text-col {
       width: 100%;
       gap: 0;
       padding: 0;
-      z-index: 1;
-      margin-top: -20px;
     }
   
     .scrolly-text-box {
       opacity: 1;
       transform: none;
-      min-height: 100vh;
-      padding-bottom: 4rem;
+      min-height: unset;
+      padding: 1rem;
+      margin-bottom: 1rem;
     }
+  
+    .mobile-embed {
+      display: block;
+    }
+  }
+  
+  .mobile-embed {
+    display: none;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1rem;
   }
