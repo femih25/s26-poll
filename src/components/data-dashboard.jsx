@@ -4,11 +4,12 @@ import './data-dashboard.css';
 
 const page_data = {
     "page-wellbeing":[
-        {label: "wellbeing1", embed: null}, 
+        {label: "WELL-BEING", embed: null}, 
         {label: "SCREEN TIME", embed: "https://flo.uri.sh/visualisation/28858612/embed"},
         {label: "ALCOHOL", embed: "https://flo.uri.sh/visualisation/28856052/embed"},
         {label: "DRUGS", embed: "https://flo.uri.sh/visualisation/28859240/embed"},
-        {label: "wellbeing5", embed: null},
+        {label: "SOCIAL SATISFACTION", embed: "https://flo.uri.sh/visualisation/28912941/embed"},
+        {label: "NU SATISFACTION", embed: "https://flo.uri.sh/visualisation/28912548/embed"},
     ], 
     "page-ai":[
         {label: "ai1", embed: null}, 
