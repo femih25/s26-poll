@@ -89,39 +89,41 @@
   }
   
   /* mobile */
-  @media (max-width: 768px) {
-    .page-content-container {
-      flex-direction: column;
-      padding: 1rem;
-    }
-  
-    .dv-col {
-      display: none;  /* hide sticky graph */
-    }
-  
-    .scrolly-text-col {
-      width: 100%;
-      gap: 0;
-      padding: 0;
-    }
-  
-    .scrolly-text-box {
-      opacity: 1;
-      transform: none;
-      min-height: unset;
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-  
-    .mobile-embed {
-      display: block;
-    }
+  /* Desktop: hide mobile embeds */
+.mobile-embed {
+  display: none;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Mobile: show embeds, hide sticky chart */
+@media (max-width: 768px) {
+  .page-content-container {
+    flex-direction: column;
+    padding: 1rem;
   }
-  
-  .mobile-embed {
+
+  .dv-col {
     display: none;
+  }
+
+  .scrolly-text-col {
     width: 100%;
-    border: none;
-    border-radius: 8px;
+    gap: 0;
+    padding: 0;
+  }
+
+  .scrolly-text-box {
+    opacity: 1;
+    transform: none;
+    min-height: unset;
+    padding: 1rem;
     margin-bottom: 1rem;
   }
+
+  .mobile-embed {
+    display: block;  /* ← this now wins because it's inside the media query */
+  }
+}

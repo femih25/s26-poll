@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const categories = [
     { name: 'WELL-BEING', className: 'wellbeing', path: '/wellbeing', icon: 'Well-being_Icon.png', topic: 'Social satisfaction, well-being, screen time and alcohol'},
-    { name: 'AI', path: '/ai', icon: 'AI_Icon.png'},
+    { name: 'AI', path: '/ai', icon: 'AI_Icon.png', topic: 'AI’s impact on academics, jobs and society'},
     { name: 'SPORTS', path: '/sports', icon: 'Sports_Icon.png', topic: 'How much Northwestern students watch and care about NU sports'},
     { name: 'CAREER', path: '/jobs', icon: 'Career_Icon.png', topic: 'Summer plans, future career worries'},
     { name: 'NU ISSUES', path: '/nu-issues', icon: 'NU_Issues_Icon.png', topic: 'Bienen’s presidency, federal funding deal, antisemitism and Islamophobia'},

@@ -54,7 +54,7 @@ const page_content = {
           text: [
             "Over the last year, students have developed a more negative perspective on AI’s impact on their education.",
             "", 
-            "In spring 2025, 31.6% of respondents agreed that AI made them a better student, of which 11.1% strongly agreed with the statement.", 
+            "In Spring 2025, 31.6% of respondents agreed that AI made them a better student, of which 11.1% strongly agreed with the statement.", 
             "This year, 62.1% of undergraduates indicated their disagreement, a 27.4% uptick from last year.",
             <>These results come as some {""}<a href = "https://dailynorthwestern.com/2026/05/05/campus/some-northwestern-professors-give-exams-more-weight-in-grades-due-to-student-ai-usage/">NU classes increase the weight of exams</a>{""} to discourage AI usage and as the school begins to {""}<a href = "https://dailynorthwestern.com/2026/03/10/campus/northwestern-announces-new-ai-major-beginning-fall-2026/">offer an Al major.</a> Moreover, a Lumina Foundation-Gallup study found that more than half of the college students surveyed use AI on class work at least once a week."</>
           ],

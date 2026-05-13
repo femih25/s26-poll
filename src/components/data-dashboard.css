@@ -135,14 +135,16 @@
   
   .data-iframe {
     width: 100%;
+    height: 700px;
     border: none;
     display: block;
-  }
+}
 
-/* Responsive */
-@media (max-width: 900px) {
-    .data-embed { width: 95%; }
-  }
+@media (max-width: 768px) {
+    .data-iframe {
+        height: 1000px;
+    }
+}
   
   @media (max-width: 600px) {
     .data-pill-grid { gap: 1rem; padding: 0 1rem 2rem 1rem; }

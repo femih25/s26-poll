@@ -19,7 +19,7 @@ const page_data = {
     "page-sports":[
         {label: "ENGAGEMENT", embed: "https://flo.uri.sh/visualisation/28859190/embed"}, 
         {label: "ATTENDANCE", embed: "https://flo.uri.sh/visualisation/28859292/embed"},
-        {label: "sports3", embed: null},
+        {label: "SPORT POPULARITY", embed: "https://flo.uri.sh/visualisation/28941036/embed"},
         {label: "sports4", embed: null},
         {label: "sports5", embed: null},
     ], 
@@ -71,7 +71,7 @@ export default function DataDashboard({pageKey}) {
                     src={current.embed}
                     title={active}
                     className="data-iframe"
-                    style={{ height: current.height || 600 }}
+                    style={{ height: current.height || 700 }}
                     allowFullScreen
                   />
                 ) : (

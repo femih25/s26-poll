@@ -32,8 +32,309 @@ body {
     text-align: center;
     font-family: "Londrina Solid", sans-serif;
     font-size: 60px;
-    line-height: 1.15; 
+    line-height: 1; 
     margin-bottom: 0; 
+    margin-top: 0.2;
+  }
+
+
+  
+  h2{
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 32px;
+    font-weight: 300; 
+  }
+
+    .sec_title{ 
+        margin: 0;
+    }
+
+    h2.page-title{ 
+      font-weight: 300; 
+      font-size: 36px;
+      padding: 0 25%;
+      text-align: center;
+      display: block;
+      margin-bottom: 0;
+    }
+
+    h2.page-title::after {
+      content: '';
+      display: block;
+      width: 75%;
+      height: 4px;
+      margin: 0.5rem auto 0;
+      margin-bottom: 0; 
+    }
+
+body.page-national-politics h2.page-title::after { background-color: #e6c05a; }
+body.page-jobs h2.page-title::after              { background-color: #86b5ad; }
+body.page-wellbeing h2.page-title::after         { background-color: #a0a972; }
+body.page-ai h2.page-title::after                { background-color: #96b5dc; }
+body.page-sports h2.page-title::after            { background-color: #e49535; }
+body.page-nu-issues h2.page-title::after         { background-color: #705294; }
+
+
+
+  
+  h3 {
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  h3.page-byline {
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 2rem;
+  }
+
+  h3.page-section-title-left{
+    text-align: left !important;
+    padding: 0 50% 0 5%;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  h4 {
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+/* Audio Box Styling */
+    .audio-box{ 
+      color: white; 
+      background:#A390C2; 
+      border: 2px solid rgb(130, 114, 154);
+      padding: 0.5rem; 
+      max-width: 20%;
+      border-radius: 8px;
+      margin: 0 auto; 
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .audio-box:hover{ 
+      background: rgb(130, 114, 154);
+      transform: scale(1.03);
+    }
+
+    .audio-box-link{ 
+      text-decoration: none;
+    }
+
+    .deering-box{
+        background:#705294; 
+        border: 2px solid #322442;
+        padding: 0.5rem; 
+        max-width: 500px;
+        max-height: 500px; 
+        border-radius: 8px;
+        margin: 0 auto; 
+        overflow: hidden;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .deering-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+    }
+
+    .deering-box-text{
+      color: white; 
+    }
+
+    .deering-box:hover{ 
+      background: #322442;
+      transform: scale(1.03);
+    }
+
+
+  p {
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+  }
+
+  p.intro-blurb{
+    font-family: "DM Sans", sans-serif;
+    margin-top: 0; 
+    margin-bottom: 3rem; 
+    padding: 0 20%;
+    line-height: 1.8; 
+    color: rgba(0, 0, 0, 0.676); 
+  }
+
+  p.box{
+    background-color: white;
+    border-radius: 15px;
+    padding: 3% 6%;
+    line-height: 1.8; 
+    max-width: 50%;
+    margin: 0 auto 0 auto; 
+  }
+
+  p.page-content-left{
+    text-align: left !important;;
+    padding: 0 50% 0 5%;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+
+  a {
+    color: #705294
+  }
+
+  
+  #from-the-editor{
+      margin-bottom: 4rem;
+    }
+
+  #methodology{
+    margin-bottom: 8rem;
+  }
+
+  /* so the navbar doesn't cover section titles when you click on the links */
+  #from-the-editor, #methodology, #more {
+    scroll-margin-top: 70px;
+}
+#home {
+  scroll-margin-top: 90px;
+}
+
+#footer {
+  margin-top: 4rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.223);
+  color: rgba(0, 0, 0, 0.676);
+  font-size: 14px; 
+}
+
+
+/* deering popup */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: white;
+  border-radius: 12px;
+  width: 95vw;
+  height: 95vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+
+/* big stats */
+.big-stat{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+h2 .stat-num-natpol{
+  font-family: "Londrina Solid", sans-serif;
+  text-shadow: 2px 2px 4px #F1D279;
+  margin: 0; 
+}
+
+p .stat-text-top{
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+.num_illo{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0; 
+}
+
+
+.la{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem; 
+}
+
+/* text sizes for mobile */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Londrina+Solid:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif; 
+    margin: 0 auto; 
+    overflow-x: hidden;
+    padding-top: 40px;
+    max-width: 100vw; 
+  }
+
+  body.page-national-politics { background-color: #f1d17950 ; }
+  body.page-nu-issues { background-color: #89779e66 ; }
+  body.page-jobs { background-color: #86b5ad35 ; }
+  body.page-wellbeing { background-color: #a0a97241 ; }
+  body.page-ai { background-color: #96b6dc34 ; }
+  body.page-sports { background-color: #f3b86b6f ; }
+  body.page-home { background-color: #ECE9F1 ; }
+
+  @media (max-width: 768px) {
+    body {
+        padding-top: 180px;
+    }
+  }
+  
+  h1{ 
+    text-align: center;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 60px;
+    line-height: 1; 
+    margin-bottom: 0; 
+    margin-top: 0.2;
   }
 
 
@@ -277,6 +578,25 @@ p .stat-text-top{
   margin: 0;
 }
 
+.num_illo{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0; 
+}
+
+
+.la{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem; 
+}
+
 /* text sizes for mobile */
 @media (max-width: 768px) {
   h1 {
@@ -321,6 +641,7 @@ p .stat-text-top{
   p.box {
     max-width: 85%;
     padding: 5% 8%;
+    margin-bottom: 1rem; 
   }
 
   .audio-box {

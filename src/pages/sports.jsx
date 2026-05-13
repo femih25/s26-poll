@@ -17,12 +17,6 @@ function Sports() {
       </p>
     </div> 
 
-    <div style = {{display: 'flex', textAlign: 'center', gridTemplateColumns: '1fr 1fr 1 fr'}}>
-      <p style={{fontFamily: "'Londrina Solid', sans-serif", fontSize: '35px'}}>
-        Nearly a quarter of undergraduates say they have never attended an NU sporting event.</p>
-      <p style={{fontFamily: "'Londrina Solid', sans-serif", fontSize: '35px'}}>
-        More than 60% of NU students said they either disagree or strongly disagree with the statement, “Northwestern sports are an important part of my college experience.”</p>
-    </div>
 
     <div id = 'sports-page-content'> 
         <PageContent pageKey="page-sports" />
