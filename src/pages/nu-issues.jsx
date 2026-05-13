@@ -18,9 +18,10 @@ function NUIssues() {
       </p>
     </div> 
 
-    <h2 className="sec-title" style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>
-        Click here for student perspectives on Northwestern's funding deal
-      </h2>
+    <div className="deering-box" style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>
+    <img src="gfx/deering.webp" alt="Click to open" />
+    <h2 className="deering-box-text">Click to see student perspectives on Northwestern's funding deal</h2>
+      </div>
 
       {open && (
         <div className="popup-overlay" onClick={() => setOpen(false)}>

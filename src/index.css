@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Londrina+Solid:wght@300;400;700&display=swap');
 
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 
 body {
     font-family: "DM Sans", sans-serif; 
     margin: 0 auto; 
     overflow-x: hidden;
     padding-top: 40px;
+    max-width: 100vw; 
   }
 
   body.page-national-politics { background-color: #f1d17950 ; }
@@ -116,6 +122,35 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 
     .audio-box-link{ 
       text-decoration: none;
+    }
+
+    .deering-box{
+        background:#705294; 
+        border: 2px solid #322442;
+        padding: 0.5rem; 
+        max-width: 500px;
+        max-height: 500px; 
+        border-radius: 8px;
+        margin: 0 auto; 
+        overflow: hidden;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .deering-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+    }
+
+    .deering-box-text{
+      color: white; 
+    }
+
+    .deering-box:hover{ 
+      background: #322442;
+      transform: scale(1.03);
     }
 
 
@@ -289,6 +324,17 @@ p .stat-text-top{
   }
 
   .audio-box {
-    max-width: 70%;
+    max-width: 80%;
+  }
+
+  .deering-box {
+    max-width: 90%;
+    max-height: unset;
+  }
+
+  .popup-box {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
   }
 }

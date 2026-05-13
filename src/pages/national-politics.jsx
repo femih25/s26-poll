@@ -12,11 +12,6 @@ function NationalPolitics() {
     return (
     <div className = 'page-natpol'> 
 
-    <div id = 'big-stat'>
-      <p className = 'stat-text-top'>More than</p>
-      <h1 className = 'stat-num'>92%</h1>
-      <p className = 'stat-text-bottom'>of respondents disapproved of Trump’s job performance</p>
-    </div> 
     <div id = 'page-intro'> 
       <h2 className = "page-title">Immigration enforcement disapproval, high liberalism underscore national politics trends</h2>
       <h3 className = "page-byline">Ryan Ottignon</h3>
@@ -25,6 +20,13 @@ function NationalPolitics() {
       war in Iran, may be indicators of how liberal the student body has stayed. But others, like the federal immigration enforcement blitz on the 
         Chicago area that began in the fall, speak directly to local and University policy.
       </p>
+
+      <div id = 'big-stat'>
+      <p className = 'stat-text-top'>More than</p>
+      <h1 className = 'stat-num'>92%</h1>
+      <p className = 'stat-text-bottom'>of respondents disapproved of Trump’s job performance</p>
+    </div> 
+    
     </div> 
 
     <div id = 'natpol-page-content'> 
