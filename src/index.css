@@ -8,12 +8,13 @@ body {
     padding-top: 40px;
   }
 
-  #home{
-    background-color: #ECE9F1;
-  }
-
   body.page-national-politics { background-color: #f1d17950 ; }
-  .page-jobs { background-color: #86b5ad50 !important; }
+  body.page-nu-issues { background-color: #89779e66 ; }
+  body.page-jobs { background-color: #86b5ad35 ; }
+  body.page-wellbeing { background-color: #a0a97241 ; }
+  body.page-ai { background-color: #96b6dc34 ; }
+  body.page-sports { background-color: #f3b86b6f ; }
+  body.page-home { background-color: #ECE9F1 ; }
 
   @media (max-width: 768px) {
     body {
@@ -56,10 +57,16 @@ body {
       display: block;
       width: 75%;
       height: 4px;
-      background-color: #A390C2;
       margin: 0.5rem auto 0;
       margin-bottom: 0; 
     }
+
+body.page-national-politics h2.page-title::after { background-color: #e6c05a; }
+body.page-jobs h2.page-title::after              { background-color: #86b5ad; }
+body.page-wellbeing h2.page-title::after         { background-color: #a0a972; }
+body.page-ai h2.page-title::after                { background-color: #96b5dc; }
+body.page-sports h2.page-title::after            { background-color: #e49535; }
+body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 
 
 
@@ -127,6 +134,15 @@ body {
     color: rgba(0, 0, 0, 0.676); 
   }
 
+  p.box{
+    background-color: white;
+    border-radius: 15px;
+    padding: 3% 6%;
+    line-height: 1.8; 
+    max-width: 50%;
+    margin: 0 auto 0 auto; 
+  }
+
   p.page-content-left{
     text-align: left !important;;
     padding: 0 50% 0 5%;
@@ -158,10 +174,52 @@ body {
 
 #footer {
   margin-top: 4rem;
-  border-top: 2px solid rgb(163, 144, 194, 0.5);
+  border-top: 2px solid rgba(0, 0, 0, 0.223);
   color: rgba(0, 0, 0, 0.676);
   font-size: 14px; 
 }
+
+
+/* deering popup */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: white;
+  border-radius: 12px;
+  width: 95vw;
+  height: 95vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
 
 /* big stats */
 .big-stat{
@@ -182,4 +240,55 @@ p .stat-text-top{
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   margin: 0;
+}
+
+/* text sizes for mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h2.page-title {
+    font-size: 26px;
+    padding: 0 8%;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h3.page-section-title-left {
+    padding: 0 5%;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  p.intro-blurb {
+    font-size: 16px;
+    padding: 0 8%;
+    margin-bottom: 4rem;
+  }
+
+  p.page-content-left {
+    padding: 0 5%;
+  }
+
+  p.box {
+    max-width: 85%;
+    padding: 5% 8%;
+  }
+
+  .audio-box {
+    max-width: 70%;
+  }
 }

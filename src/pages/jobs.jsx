@@ -1,7 +1,13 @@
 import DataDashboard from "../components/data-dashboard"
 import PageContent from "../components/page-content"
+import { useEffect } from "react"
 
 function Jobs() {
+    useEffect(() => {
+      document.body.classList.add('page-jobs')
+      return () => document.body.classList.remove('page-jobs')
+    }, [])
+
     return (
     <div className = 'page-jobs'> 
     <div id = 'page-intro'> 

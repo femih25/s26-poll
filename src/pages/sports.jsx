@@ -1,6 +1,12 @@
 import DataDashboard from "../components/data-dashboard"
+import { useEffect } from "react"
 
 function Sports() {
+    useEffect(() => {
+      document.body.classList.add('page-sports')
+      return () => document.body.classList.remove('page-sports')
+    }, [])
+
     return (
     <div> 
     <h1>Sports</h1>

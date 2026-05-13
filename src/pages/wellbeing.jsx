@@ -1,7 +1,13 @@
 import DataDashboard from "../components/data-dashboard"
+import { useEffect } from "react"
 
 
 function Wellbeing() {
+  useEffect(() => {
+    document.body.classList.add('page-wellbeing')
+    return () => document.body.classList.remove('page-wellbeing')
+  }, [])
+
     return (
     <div> 
     <div id = 'page-intro'> 
