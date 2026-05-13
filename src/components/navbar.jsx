@@ -31,12 +31,12 @@ function Navbar(){
                     <a href="#">Data Categories <PiCaretDownFill /></a>
                     {dropdownOpen && (
                         <ul className="dropdown-menu">
-                            <li><Link to="/wellbeing" className="wellbeing">Well-Being</Link></li>
-                            <li><Link to="/ai" className="AI">AI</Link></li>
-                            <li><Link to="/sports" className="sports">Sports</Link></li>
-                            <li><Link to="/jobs" className="jobs">Career</Link></li>
-                            <li><Link to="/nu-issues" className="nuissues">NU Issues</Link></li>
-                            <li><Link to="/national-politics" className="natpolitics">National Politics</Link></li>
+                            <li><Link to="/wellbeing" className="wellbeing" onClick={() => window.scrollTo(0,0)}>Well-Being</Link></li>
+                            <li><Link to="/ai" className="AI" onClick={() => window.scrollTo(0,0)}>AI</Link></li>
+                            <li><Link to="/sports" className="sports" onClick={() => window.scrollTo(0,0)}>Sports</Link></li>
+                            <li><Link to="/jobs" className="jobs" onClick={() => window.scrollTo(0,0)}>Career</Link></li>
+                            <li><Link to="/nu-issues" className="nuissues" onClick={() => window.scrollTo(0,0)}>NU Issues</Link></li>
+                            <li><Link to="/national-politics" className="natpolitics" onClick={() => window.scrollTo(0,0)}>National Politics</Link></li>
                         </ul>
                     )}
                 </li>

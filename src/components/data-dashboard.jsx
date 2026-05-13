@@ -4,7 +4,8 @@ import './data-dashboard.css';
 
 const page_data = {
     "page-wellbeing":[
-        {label: "WELL-BEING", embed: "https://flo.uri.sh/visualisation/28860811/embed"}, 
+      {label: "FIRST-YEAR SATISFACTION", embed: "https://flo.uri.sh/visualisation/28948453/embed"}, 
+        {label: "MENTAL HEALTH FACTORS", embed: "https://flo.uri.sh/visualisation/28860811/embed"}, 
         {label: "SCREEN TIME", embed: "https://flo.uri.sh/visualisation/28858612/embed"},
         {label: "ALCOHOL", embed: "https://flo.uri.sh/visualisation/28856052/embed"},
         {label: "DRUGS", embed: "https://flo.uri.sh/visualisation/28859240/embed"},
@@ -20,8 +21,6 @@ const page_data = {
         {label: "ENGAGEMENT", embed: "https://flo.uri.sh/visualisation/28859190/embed"}, 
         {label: "ATTENDANCE", embed: "https://flo.uri.sh/visualisation/28859292/embed"},
         {label: "SPORT POPULARITY", embed: "https://flo.uri.sh/visualisation/28941036/embed"},
-        {label: "sports4", embed: null},
-        {label: "sports5", embed: null},
     ], 
     "page-jobs":[
         {label: "CONCERNS", embed: "https://flo.uri.sh/visualisation/28872882/embed"}, 
@@ -31,10 +30,12 @@ const page_data = {
     ],
     "page-nu-issues":[
         {label: "ISLAMOPHOBIA PERCEPTION", embed: "https://flo.uri.sh/visualisation/28912975/embed"}, 
-        {label: "ISLAMOPHOBIA EXPERIENCE", embed: "https://flo.uri.sh/visualisation/28913208/embed"},
-        {label: "nu-issues3", embed: null},
-        {label: "nu-issues4", embed: null},
-        {label: "nu-issues5", embed: null},
+        {label: "ISLAMOPHOBIC BEHAVIOR", embed: "https://flo.uri.sh/visualisation/28913208/embed"},
+        {label: "INTERIM PRESIDENT BIENEN", embed: "https://flo.uri.sh/visualisation/28940958/embed"},
+        {label: "FUNDING DEAL", embed: "https://flo.uri.sh/visualisation/28932054/embed"},
+        {label: "NU'S NEXT PRESIDENT", embed: "https://flo.uri.sh/visualisation/28932002/embed"},
+        {label: "ANTISEMITISM PERCEPTION", embed: "https://flo.uri.sh/visualisation/28931909/embed"},
+        {label: "ANTISEMITIC BEHAVIOR", embed: "https://flo.uri.sh/visualisation/28931960/embed"},
     ], 
     "page-national-politics":[
         {label: "POLITICAL LEANING", embed: "https://flo.uri.sh/visualisation/28930603/embed"}, 

@@ -19,6 +19,21 @@ function Wellbeing() {
     </div> 
 
 
+<div className='maps'>
+  <div className='sb-map'>
+    <h2 className='map-title'>Where do students spend Spring Break?</h2>
+    <iframe className="wellbeing-map" src="https://flo.uri.sh/visualisation/28947749/embed" width="100%" allowFullScreen></iframe>
+  </div>
+  <div className='cry-map'>
+    <h2 className='map-title'>Willard, Allison, Schapiro, Tech among top last-cry locations for students</h2>
+    <p className='map-subtitle'>Undergraduates were asked: "Where on Northwestern's campus did you last cry?"</p>
+    <img src='/s26poll/cry-map.jpg' alt='map of crying locations'/>
+    <p className='map-caption'>Source: The Daily Spring 2026 Poll. n = 319 (Graphic by Ryan Ottignon) <br/>
+    Note: Data is unweighted.</p>
+  </div>
+</div>
+
+
     
 
     <div id = 'wellbeing-page-content'> 

@@ -27,6 +27,7 @@ body {
         padding-top: 180px;
     }
   }
+
   
   h1{ 
     text-align: center;
@@ -257,34 +258,51 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 }
 
 
-/* big stats */
-.big-stat{
+/* sb & cry maps */
+.maps {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 2rem;
-  padding: 2rem;
+  align-items: center;
+  padding: 0 5rem;
+  margin-bottom: 0.5rem;
 }
 
-h2 .stat-num-natpol{
-  font-family: "Londrina Solid", sans-serif;
-  text-shadow: 2px 2px 4px #F1D279;
-  margin: 0; 
+.sb-map, .cry-map {
+  flex: 1;
+  min-width: 0;
 }
 
-p .stat-text-top{
-  font-family: "DM Sans", sans-serif;
-  font-size: 18px;
-  margin: 0;
+.maps h2 {
+  margin-bottom: 0.5rem;
 }
+
+.wellbeing-map {
+  width: 100%;
+  border-radius: 8px;
+  height: 550px;
+}
+
+.cry-map img {
+  width: 100%;
+  border-radius: 8px;
+  height: 550px;
+}
+
+@media (max-width: 768px) {
+  .maps {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+}
+
+
 
 .num_illo{
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   height: auto;
   display: block;
-  margin: 0 auto;
-  margin-bottom: 0; 
+  margin: 0 auto 1rem auto;
 }
 
 
@@ -294,7 +312,8 @@ p .stat-text-top{
   height: auto;
   display: block;
   margin: 0 auto;
-  margin-top: 2rem; 
+  margin-top: 0; 
+  margin-bottom: 1rem; 
 }
 
 /* text sizes for mobile */
@@ -324,7 +343,7 @@ body {
 
   @media (max-width: 768px) {
     body {
-        padding-top: 180px;
+        padding-top: 7rem;
     }
   }
   
@@ -498,6 +517,7 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 
   #methodology{
     margin-bottom: 8rem;
+    margin-top: 2rem; 
   }
 
   /* so the navbar doesn't cover section titles when you click on the links */
@@ -558,24 +578,54 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 
 
 /* big stats */
-.big-stat{
+#double-standout-stat {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 0 7%;
+  margin-bottom: 1.5rem;
 }
 
-h2 .stat-num-natpol{
-  font-family: "Londrina Solid", sans-serif;
-  text-shadow: 2px 2px 4px #F1D279;
-  margin: 0; 
+#double-standout-stat .stat1,
+#double-standout-stat .stat2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-p .stat-text-top{
+#double-standout-stat .above-stat,
+#double-standout-stat .below-stat {
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   margin: 0;
+  line-height: 1.4;
+}
+
+#double-standout-stat .stat {
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: rgb(56, 56, 56);
+  text-shadow: 4px 4px 0px #e6c05a;
+  margin: 0;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  #double-standout-stat {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #double-standout-stat .above-stat,
+  #double-standout-stat .below-stat {
+    font-size: 16px;
+  }
+
+  #double-standout-stat .stat {
+    font-size: 60px;
+  }
 }
 
 .num_illo{
@@ -655,7 +705,30 @@ p .stat-text-top{
 
   .popup-box {
     width: 100vw;
-    height: 100vh;
+    height: 92dvh;
     border-radius: 0;
+    margin: auto;
+    overflow-y: auto;
   }
-}
+
+  
+    .popup-box iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+    }
+  
+    .popup-overlay {
+      padding: 0;
+      align-items: center;
+    }
+  
+    .popup-close {
+      top: 12px;
+      right: 12px;
+    }
+
+    .la {
+      margin-top: 0;
+    }
+  }

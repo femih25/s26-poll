@@ -28,7 +28,7 @@ function NUIssues() {
         <div className="popup-overlay" onClick={() => setOpen(false)}>
           <div className="popup-box" onClick={e => e.stopPropagation()}>
             <button className="popup-close" onClick={() => setOpen(false)}>✕</button>
-            <iframe src="/scrollytelling.html" title="Perspectives" />
+            <iframe src="/s26poll/scrollytelling.html" title="Perspectives" />
           </div>
         </div>
       )}

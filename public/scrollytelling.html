@@ -9,7 +9,7 @@
 html,body{font-family:Georgia,serif;background:#111;color:#fff;scrollbar-gutter:stable;overscroll-behavior-y:none}
 a{color:#c3b3d5!important;text-decoration:underline;transition:opacity .2s}
 a:hover{opacity:.7}
-#scrolly{position:relative;height:100vh;overflow:hidden}
+#scrolly{position:relative;height:100%;min-height:100vh;overflow:hidden}
 .step{position:absolute;inset:0;transform:translateY(100%);transition:transform .55s}
 .step.is-active{transform:translateY(0);z-index:2}
 .step.is-prev{transform:translateY(-100%);z-index:1}
@@ -22,7 +22,7 @@ a:hover{opacity:.7}
 .feed-stack{position:absolute;inset:0;pointer-events:none;z-index:5;overflow:hidden}
 .feed-line{position:absolute;bottom:5rem;left:0;right:0;display:flex;justify-content:center;transform:translateY(6rem);opacity:0;transition:transform .65s cubic-bezier(.4,0,.2,1),opacity .65s ease,filter .65s ease}
 .feed-line.feed-current{transform:translateY(0);opacity:1}
-.feed-line.feed-past{transform:translateY(-3rem) scale(.98);opacity:.15;filter:blur(3px);}
+.feed-line.feed-past{transform:translateY(-3rem) scale(.98);opacity:.15;filter:blur(8px);}
 .feed-text{font-size:clamp(1.1rem,2vw,1.7rem);max-width:700px;text-align:center;line-height:1.55;color:rgba(255,255,255,.92)}
 #scrolly-bg{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
 .scene-bg{position:absolute;inset:0;background:url('gfx/deering.webp') center 40%/cover;will-change:transform;transition:transform .9s cubic-bezier(.4,0,.2,1)}
@@ -46,7 +46,7 @@ a:hover{opacity:.7}
 .quadrant-quote-box{position:absolute;top:22%;left:55%;width:38%;z-index:10;transition:left .4s cubic-bezier(.4,0,.2,1),width .4s cubic-bezier(.4,0,.2,1),text-align .4s}
 .notable-quote{font-size:clamp(1.2rem,2vw,1.8rem);line-height:1.4;color:#fff;margin-bottom:1rem;text-shadow:0 2px 15px rgba(0,0,0,.8)}
 .highlight{background:rgba(195,179,213,.55);padding:0 4px;border-radius:2px;color:#fff}
-.quote-attribution{font-style:italic;font-size:clamp(.9rem,1.2vw,1.1rem);color:rgba(255,255,255,.7)}
+.quote-attribution{font-style:italic;font-size:clamp(.9rem,1.2vw,1.1rem);color:rgba(255,255,255,.9)}
 .context-fact-box{max-width:850px;min-height:200px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:2.5rem;border-radius:12px;display:flex;flex-direction:column;justify-content:center;text-align:left;box-shadow:0 25px 50px rgba(0,0,0,.5);margin-top:auto}
 .context-fact-box p{margin-bottom:1rem;line-height:1.6}
 .context-fact-box p:last-child{margin-bottom:0}
@@ -78,6 +78,12 @@ a:hover{opacity:.7}
   .split-panel{width:52%;padding:4vh 3vw}
   .split-quote{font-size:clamp(.85rem,3vw,1rem)}
   .feed-text{font-size:clamp(.95rem,3.5vw,1.2rem)}
+  .quadrant-quote-box{position:relative;top:auto;left:auto!important;width:80%;margin:4rem auto 0}
+  .slide-text{justify-content:flex-start;padding:3rem 1rem 5rem;overflow-y:auto;gap:1rem; }
+  .context-fact-box{min-height:unset}
+  .notable-quote{font-size:clamp(.85rem,3vw,1rem)}
+  .quote-attribution{font-size:clamp(.75rem,2.5vw,.85rem)}
+  .context-fact-box p{font-size:clamp(.75rem,2.5vw,.85rem);line-height:1.4}
 }
 </style>
 </head>
@@ -103,7 +109,7 @@ a:hover{opacity:.7}
   <div class="step is-active" data-slide="1" role="group" aria-label="Slide 1" aria-hidden="false">
     <div class="slide-text">
       <div class="slide-main">$790 million</div>
-      <div class="slide-sub">of Northwestern's <a href="https://dailynorthwestern.com/2025/04/08/top-stories/federal-government-freezes-790-million-in-funding-for-northwestern/">federal research funding</a> was frozen by the Trump administration on April 8, 2025.</div>
+      <div class="slide-sub">of Northwestern’s <a href="https://dailynorthwestern.com/2025/04/08/top-stories/federal-government-freezes-790-million-in-funding-for-northwestern/">federal research funding</a> was frozen by the Trump administration on April 8, 2025.</div>
     </div>
   </div>
 
@@ -118,12 +124,12 @@ a:hover{opacity:.7}
     <div class="slidex-left">
       <div class="slide-sub">More than</div>
       <div class="slide-main">one-third</div>
-      <div class="slide-sub">of respondents opposed the University's decision to sign the deal with the Trump administration,</div>
+      <div class="slide-sub">of respondents oppose the University’s decision to sign the deal with the Trump administration,</div>
     </div>
     <div class="slidex-right">
-      <div class="slide-sub">and</div>
+      <div class="slide-sub">and more than</div>
       <div class="slide-main">one-fifth</div>
-      <div class="slide-sub">were not familiar enough with the terms to form an opinion.</div>
+      <div class="slide-sub">are not familiar enough with the terms to form an opinion.</div>
     </div>
   </div>
 
@@ -131,10 +137,10 @@ a:hover{opacity:.7}
     <div class="slidex-left">
       <div class="slide-sub">Split by gender of respondents,</div>
       <div class="slide-main">38.6%</div>
-      <div class="slide-sub">of women opposed the federal deal.</div>
+      <div class="slide-sub">of women oppose the federal deal.</div>
     </div>
     <div class="slidex-right">
-      <div class="slide-sub">That's compared to</div>
+      <div class="slide-sub">That’s compared to</div>
       <div class="slide-main">29.5%</div>
       <div class="slide-sub">of men.</div>
     </div>
@@ -143,21 +149,21 @@ a:hover{opacity:.7}
   <div class="step" data-slide="5" data-feed data-feed-count="3" role="group" aria-label="Slides 5, 6, and 7" aria-hidden="true">
     <div class="feed-stack">
       <div class="feed-line" data-feed-index="0">
-        <div class="feed-text">More than half of LGBTQ+ respondents opposed the deal, compared to one-fourth of their non-LGBTQ+ peers.</div>
+        <div class="feed-text"><strong>More than half</strong> of LGBTQ+ respondents oppose the deal, compared to <strong>one-fourth</strong> of their non-LGBTQ+ peers.</div>
       </div>
       <div class="feed-line" data-feed-index="1">
-        <div class="feed-text">Jewish respondents were twice as likely to support the deal as their non-Jewish peers.</div>
+        <div class="feed-text">Jewish respondents are <strong>twice as likely</strong> to support the deal as their non-Jewish peers.</div>
       </div>
       <div class="feed-line" data-feed-index="2">
-        <div class="feed-text">Among respondents who had an opinion on the deal, those on financial aid were 26.7% more likely to oppose the deal than their peers not on financial aid.</div>
+        <div class="feed-text">Among respondents who have an opinion on the deal, those on financial aid are <strong>26.7% more likely</strong> to oppose the deal than their peers not on financial aid.</div>
       </div>
     </div>
   </div>
 
   <div class="step" data-slide="8" role="group" aria-label="Slide 8" aria-hidden="true">
     <div class="slide-text">
-      <div class="slide-main" style="font-size:clamp(1.6rem,3vw,2.8rem)">Here's what some undergraduates had to say about the deal.</div>
-      <div class="slide-sub">In the Spring 2026 poll, respondents had the option to provide an open-ended response to the question: "Is there anything else you'd like to share about your perspective on this deal?"</div>
+      <div class="slide-main" style="font-size:clamp(1.6rem,3vw,2.8rem)">Here’s what some undergraduates had to say about the deal.</div>
+      <div class="slide-sub">In the The Daily Spring 2026 Poll, respondents had the option to provide a response to the open-ended question: “Is there anything else you'd like to share about your perspective on this deal?”</div>
     </div>
   </div>
 
@@ -172,14 +178,14 @@ a:hover{opacity:.7}
   <div class="step" data-slide="10" role="group" aria-label="Slide 10" aria-hidden="true">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "University would've been hurt by a <span class="highlight">continued loss of funding.</span> Signing the deal was necessary."
+        “University would’ve been hurt by a <span class="highlight">continued loss of funding.</span> Signing the deal was necessary.”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "support" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “support” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
         <p>When the deal was made on Nov. 28, the accrued cost in internal funding for frozen research grants had reached about $350 million, according to the Office of the President website.</p>
-        <p>"At a cost of $40 million a month, this was simply not sustainable," Bienen said in a Q&A video published on the Office of the President's website.</p>
+        <p>“At a cost of $40 million a month, this was simply not sustainable,” interim President Henry Bienen said in a Q&A video published on the Office of the President’s website.</p>
       </div>
     </div>
   </div>
@@ -187,9 +193,9 @@ a:hover{opacity:.7}
   <div class="step" data-slide="11" role="group" aria-label="Slide 11">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "The situation is a terrible one to be in, but <span class="highlight">thousands of graduate students at Northwestern rely upon this federal funding for their livelihood.</span> <span class="ellipsis-hint" data-tooltip="I wish some of the terms were not what they were, and I deeply despise the Trump administration for putting academic institutions like Northwestern in this position, but unfortunately at the end of the day students must have food to eat and a roof to sleep under.">...</span>"
+        “The situation is a terrible one to be in, but <span class="highlight">thousands of graduate students at Northwestern rely upon this federal funding for their livelihood.</span> <span class="ellipsis-hint" data-tooltip="I wish some of the terms were not what they were, and I deeply despise the Trump administration for putting academic institutions like Northwestern in this position, but unfortunately at the end of the day students must have food to eat and a roof to sleep under.">...</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "strongly support" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “strongly support” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
@@ -201,9 +207,9 @@ a:hover{opacity:.7}
   <div class="step" data-slide="12" role="group" aria-label="Slide 12">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "The totality of the agreement is disgusting <span class="ellipsis-hint" data-tooltip="and goes against the inclusive principles that I thought defined our schools beliefs">...</span> . On the other hand, I know people <span class="highlight">who lost their jobs at Northwestern because of the freeze and others who couldn't continue their important research,</span> like cancer research, because of the lack of funding. <span class="ellipsis-hint" data-tooltip="I think it's hard to think of this issue as a black and white situation because with or without the agreement the Northwestern community is getting hurt.">...</span>"
+        “The totality of the agreement is disgusting <span class="ellipsis-hint" data-tooltip="and goes against the inclusive principles that I thought defined our schools beliefs.">...</span> On the other hand, I know people <span class="highlight">who lost their jobs at Northwestern because of the freeze and others who couldn't continue their important research,</span> like cancer research, because of the lack of funding. <span class="ellipsis-hint" data-tooltip="I think it’s hard to think of this issue as a black and white situation because with or without the agreement the Northwestern community is getting hurt.">...</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "neither support nor oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “neither support nor oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
@@ -215,7 +221,7 @@ a:hover{opacity:.7}
   <div class="step" data-slide="13" role="group" aria-label="Slide 13">
     <div class="slide-text">
       <div class="slide-main" style="font-style:italic;font-size:clamp(1.6rem,3vw,2.8rem)">
-        Some students voiced frustration with the concessions made to the Trump administration in this agreement.
+        Some students voiced frustration with the concessions made to the Trump administration in the agreement.
       </div>
     </div>
   </div>
@@ -223,14 +229,14 @@ a:hover{opacity:.7}
   <div class="step" data-slide="14" role="group" aria-label="Slide 14">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "<span class="ellipsis-hint" data-tooltip="The deal horrified but did not surprise me. Since I got here it's been clear how willing Northwestern is to sell out its students and its academics. But">...</span> even I didn't expect the administration to stoop so low as <span class="highlight">officially adopting the Trump administration's definition of and positions on gender and transness.</span> <span class="ellipsis-hint" data-tooltip="I am disgusted by Northwestern's hostility towards trans and feminist communities.">...</span>"
+        “<span class="ellipsis-hint" data-tooltip="The deal horrified but did not surprise me. Since I got here it’s been clear how willing Northwestern is to sell out its students and its academics. But">...</span> even I didn’t expect the administration to stoop so low as <span class="highlight">officially adopting the Trump administration’s definition of and positions on gender and transness.</span> <span class="ellipsis-hint" data-tooltip="I am disgusted by Northwestern’s hostility towards trans and feminist communities.">...</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "strongly oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “strongly oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
-        <p>The agreement requires the University to follow sex defined as an "immutable biological classification as either male or female" in a January executive order. NU claimed that "no restrictions" were placed on <a href="https://dailynorthwestern.com/2025/12/19/campus/northwestern-claims-the-federal-funding-deal-will-not-restrict-its-trans-community-students-worry-otherwise/">its transgender community</a>.</p>
-        <p>NU and the Feinberg School of Medicine also agreed not to perform gender-affirming care on minors. According to the Office of the President's website, the University has "never performed gender-affirming surgeries for minors."</p>
+        <p>The agreement requires the University to follow sex defined as an “immutable biological classification as either male or female” in a January executive order. NU claimed that “no restrictions” were placed on <a href="https://dailynorthwestern.com/2025/12/19/campus/northwestern-claims-the-federal-funding-deal-will-not-restrict-its-trans-community-students-worry-otherwise/">its transgender community</a>.</p>
+        <p>NU and the Feinberg School of Medicine also agreed not to perform gender-affirming care on minors. According to the Office of the President's website, the University has “never performed gender-affirming surgeries for minors.”</p>
       </div>
     </div>
   </div>
@@ -238,9 +244,9 @@ a:hover{opacity:.7}
   <div class="step" data-slide="15" role="group" aria-label="Slide 15">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "I understand that they needed to protect funding for important research, but basically <span class="highlight">backing down on all of the points that students fought for during the encampment</span> is wild."
+        “I understand that they needed to protect funding for important research, but basically <span class="highlight">backing down on all of the points that students fought for during the encampment</span> is wild.”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
@@ -253,14 +259,14 @@ a:hover{opacity:.7}
   <div class="step" data-slide="16" role="group" aria-label="Slide 16">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "I'm upset that the deal quietly terminated the Deering Agreement, delivering a blow to students' freedom of expression and <span class="highlight">harming the (Middle Eastern and North African) community at Northwestern.</span> <span class="ellipsis-hint" data-tooltip="I'm also concerned about the harmful implications of this deal for transgender students and (diversity, equity and inclusion) programs.">...</span>"
+        “I’m upset that the deal quietly terminated the Deering Agreement, delivering a blow to students’ freedom of expression and <span class="highlight">harming the (Middle Eastern and North African) community at Northwestern.</span> <span class="ellipsis-hint" data-tooltip="I’m also concerned about the harmful implications of this deal for transgender students and (diversity, equity and inclusion) programs.">...</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
         <p>As part of the terms of the Deering Meadow Agreement, NU provided a temporary space for the MENA Student Association and the Muslim-cultural Students Association, which is no longer available following this deal.</p>
-        <p>According to the Office of the President's website, the University will partner with alumni to "explore off-campus, privately owned locations."</p>
+        <p>According to the Office of the President’s website, the University will partner with alumni to “explore off-campus, privately owned locations.”</p>
       </div>
     </div>
   </div>
@@ -268,13 +274,13 @@ a:hover{opacity:.7}
   <div class="step" data-slide="17" role="group" aria-label="Slide 17">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "<span class="ellipsis-hint" data-tooltip="I'm upset that the deal quietly terminated the Deering Agreement, delivering a blow to students' freedom of expression and harming the MENA community at Northwestern.">...</span> I'm also concerned about the harmful implications of this deal for transgender students and <span class="highlight">DEI programs.</span>"
+        “<span class="ellipsis-hint" data-tooltip="I’m upset that the deal quietly terminated the Deering Agreement, delivering a blow to students’ freedom of expression and harming the MENA community at Northwestern.">...</span> I’m also concerned about the harmful implications of this deal for transgender students and <span class="highlight">DEI programs.</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
-        <p>NU agreed to only consider academic and professional merit for its hiring practices as part of the deal. The University also removed its requirement for "diversity statements" for faculty during the hiring process.</p>
+        <p>NU agreed to only consider academic and professional merit for its hiring practices as part of the deal. The University also removed its requirement for “diversity statements” for faculty during the hiring process.</p>
       </div>
     </div>
   </div>
@@ -282,9 +288,9 @@ a:hover{opacity:.7}
   <div class="step" data-slide="18" role="group" aria-label="Slide 18">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "I'm seriously concerned about how this deal is going to impact <span class="highlight">free speech at Northwestern.</span>"
+        “I’m seriously concerned about how this deal is going to impact <span class="highlight">free speech at Northwestern.</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
@@ -305,13 +311,13 @@ a:hover{opacity:.7}
   <div class="step" data-slide="20" role="group" aria-label="Slide 20">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "<span class="highlight">Bienen is showing weakness by giving into the administration's demands.</span> In the short term it might seem better, but now the administration knows exactly what and how to play us to get what they want. <span class="ellipsis-hint" data-tooltip="It's a stupid long-term decision that can have disastrous consequences.">...</span>"
+        “<span class="highlight">Bienen is showing weakness by giving into the administration’s demands.</span> In the short term it might seem better, but now the administration knows exactly what and how to play us to get what they want. <span class="ellipsis-hint" data-tooltip="It’s a stupid long-term decision that can have disastrous consequences.">...</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
-        <p>Among students who self-reported that they understood the terms of the deal, 33.4% disapproved of Bienen's job performance.</p>
+        <p>Among students who self-reported that they understood the terms of the deal, 33.4% disapprove of Bienen’s job performance.</p>
       </div>
     </div>
   </div>
@@ -319,9 +325,9 @@ a:hover{opacity:.7}
   <div class="step" data-slide="21" role="group" aria-label="Slide 21">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "Universities are supposed to be the hub of resistance in a nation. <span class="highlight">I'm disappointed that we caved.</span>"
+        “Universities are supposed to be the hub of resistance in a nation. <span class="highlight">I’m disappointed that we caved.</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
@@ -333,16 +339,15 @@ a:hover{opacity:.7}
   <div class="step" data-slide="22" role="group" aria-label="Slide 22">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "We should have sued their asses. <span class="highlight">Harvard did it. And won.</span>"
+        “We should have sued their asses. <span class="highlight">Harvard did it. And won.</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">
-        <p>As of now, Harvard University is the only institution to have brought the Trump administration to court.</p>
-        <p>In September 2025, a federal judge ruled in Harvard's favor that the $2 billion in federal grants and contracts frozen violated Harvard's First Amendment rights. The majority of funding has since been restored.</p>
+        <p>In September 2025, a federal judge ruled in Harvard’s favor that the $2 billion in federal grants and contracts frozen violated Harvard's First Amendment rights. The majority of funding has since been restored.</p>
         <p>Bienen told The Daily in an <a href="https://dailynorthwestern.com/2025/10/24/campus/president-henry-bienen-talks-federal-funding-freeze-bias-training-qatar-campus/">Oct. 24 interview</a> that he did not want to sue the Trump administration.</p>
-        <p>"Fighting the federal government is an incredibly difficult thing to do," Bienen said. "In law, any other way — it's very expensive."</p>
+        <p>“Fighting the federal government is an incredibly difficult thing to do,” Bienen said. “In law, any other way — it’s very expensive.”</p>
       </div>
     </div>
   </div>
@@ -350,9 +355,9 @@ a:hover{opacity:.7}
   <div class="step" data-slide="23" role="group" aria-label="Slide 23">
     <div class="quadrant-quote-box">
       <div class="notable-quote">
-        "<span class="ellipsis-hint" data-tooltip="I understand the need to restore funding, but I am more concerned about capitulating to a hostile federal government.">...</span> I am <span class="highlight">worried about what precedent signing this deal sets for the future of academic freedom at Northwestern.</span>"
+        “<span class="ellipsis-hint" data-tooltip="I understand the need to restore funding, but I am more concerned about capitulating to a hostile federal government.">...</span> I am <span class="highlight">worried about what precedent signing this deal sets for the future of academic freedom at Northwestern.</span>”
       </div>
-      <div class="quote-attribution">A respondent who expressed they "oppose" the deal</div>
+      <div class="quote-attribution">A respondent who expressed they “oppose” the deal</div>
     </div>
     <div class="slide-text">
       <div class="context-fact-box">

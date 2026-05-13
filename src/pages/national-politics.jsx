@@ -19,15 +19,22 @@ function NationalPolitics() {
       the federal government — and University administration as a proxy — over divisive national issues. <br></br> <br></br> Some of those issues, like the
       war in Iran, may be indicators of how liberal the student body has stayed. But others, like the federal immigration enforcement blitz on the 
         Chicago area that began in the fall, speak directly to local and University policy.
-      </p>
-
-      <div id = 'big-stat'>
-      <p className = 'stat-text-top'>More than</p>
-      <h1 className = 'stat-num'>92%</h1>
-      <p className = 'stat-text-bottom'>of respondents disapproved of Trump’s job performance</p>
-    </div> 
+      </p> 
     
     </div> 
+
+    <div id = 'double-standout-stat'>
+      <div className = 'stat1'>
+      <p className = 'above-stat'>More than</p> 
+      <img src = '/s26poll/92.png' alt = 'stat1' className = 'stat-img'/>
+      <p className = 'below-stat'>of respondents disapproved of Trump’s job performance</p>
+      </div> 
+      <div className = 'stat2'>
+      <p className = 'above-stat'>LGBTQ+ respondents were</p> 
+      <h1 className = 'stat'>92%</h1>
+      <p className = 'below-stat'>points more “very liberal” than non-LGBTQ+ respondents</p>
+      </div> 
+    </div>
 
     <div id = 'natpol-page-content'> 
       <PageContent pageKey="page-national-politics" />

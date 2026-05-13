@@ -7,7 +7,7 @@ import './page-content.css'
 const page_content = {
     "page-wellbeing": [
         {
-          title: "Frequent Drinking Is More Common Among Students Involved in Greek Life",
+          title: "Drinking among students in Greek life",
           text: [
             "Greek life has long played an integral role in some students’ college experience. According to Northwestern’s Division of Student Affairs, about 18% of the undergraduate student body is in a sorority or fraternity.",
             "Students involved in Greek life on campus reported drinking alcohol at substantially higher rates than their non-Greek peers. Out of students who say they never drink, only 7.8% are in Greek life.",
@@ -17,7 +17,7 @@ const page_content = {
           height: 550,
         },
         {
-          title: "First-Year Students Report Higher Social Satisfaction in Spring Than Fall",
+          title: "First-years' social satisfaction in spring vs fall",
           text: [
             "When first-year students arrive on campus in September, they spend their first few months adjusting to the new college environment, fostering relationships and finding their communities.",
             "Since the fall, the number of first-year respondents who reported that they were “very satisfied” with their social life at NU rose from 19.3% to 30.3% in the spring. At the same time, the number of students who said they were “somewhat satisfied” fell from 56.2% to 48.7%. The overall number of respondents that are satisfied has increased to 79%.",
@@ -27,7 +27,7 @@ const page_content = {
           height: 500,
         },
         {
-          title: 'Doomscrollers may have rotted their brains, but they might not have spoiled their social skills.', 
+          title: 'Social satisfaction and screen time', 
           text: [
             "Despite differences in reported amount of  time spent on their phone, respondents indicate similar levels of social satisfaction at NU. About 80% of respondents who said they spent six to eight hours on their phones said they were satisfied with their social lives at NU, just more than 2% lower than respondents that spend less than four to six hours on their phones.", 
             "Another surprise was that the people who spent eight or more hours on their phones beat out the other phone screen time categories in the “very satisfied” category by a small margin, with all breakdowns falling within four percentage points between each other. Again, though the margin was very small, it defies expectations.",
@@ -37,7 +37,7 @@ const page_content = {
           height: 500 
         }, 
         {
-          title: 'Students on financial aid aren’t making it rain. They are drowning in stress.', 
+          title: 'Financial aid and well-being', 
           text: [
             "According to Northwestern Admissions, 60% of NU students receive financial aid, claiming that the University meets “100% of every student’s demonstrated financial need.” Additionally, about 20% of first-year students are eligible for federal Pell Grants. Undergraduates who receive financial aid say that finances are one of their major stressors. Nearly half of respondents on financial aid reported that finances contribute negatively to their well-being.",
             "In contrast, students who do not receive financial aid are substantially more likely to be stress-free when it comes to finances, with 68.9% reporting no impact.", 
@@ -81,7 +81,7 @@ const page_content = {
             "The degree of agreement varied between groups. Humanities majors accounted for just under 33% of those who agreed or strongly agreed, and life and physical sciences majors were only two percent behind."
           ],
           embed: 'https://flo.uri.sh/visualisation/28911208/embed',
-          height: 500,
+          height: 750,
         },
         {
           title: "Concerns by political leaning",
@@ -92,13 +92,13 @@ const page_content = {
             "Students who identified themselves as liberal landed in the middle. About 36% of them reported neither agreeing or disagreeing with the statement.", 
           ],
           embed: 'https://flo.uri.sh/visualisation/28877588/embed', 
-          height: 500, 
+          height: 600, 
         }
       ],
 
     "page-sports": [
         {
-          title: "Years and Sports Attendance",
+          title: "Years and sports attendance",
           text: [
             "There may be an answer to the question of why Welsh-Ryan Arena’s student section is often sparsely populated. Nearly a quarter of undergraduates said they have never attended an NU sporting event, and 22.6% said they only attend NU sporting events once a year. Still, the avid fan does exist: About 6% reported attending NU sporting events more than six times per quarter.",
             "When it comes to the students who have yet to experience a game at Martin Stadium or Welsh-Ryan, NU’s newest and oldest classes have the most. About 30% of first-years say they have never attended an NU sporting event — but so do about a quarter of the seniors."
@@ -107,7 +107,7 @@ const page_content = {
           height: 550,
         },
         {
-          title: "Gender and Sports Engagement",
+          title: "Gender and sports engagement",
           text: [
             "U! Rah! Rah!? More like U! Nah! Nah!, at least for more than 60% of NU students, who said they either disagree or strongly disagree with the statement “Northwestern sports are an important part of my college experience.” Only about a quarter of NU students said they agree, and 13.9% felt neutral about the statement.",
             "A similar proportion of men and women reported agreeing with that statement, with men surpassing women by only 5.3%. The proportion of both gender categories who reported feeling in the middle are both about 15%. Even the proportions of respondents who “strongly disagree” are nearly neck and neck, with just less than 31% for women and just less than 32% for men."
@@ -116,22 +116,22 @@ const page_content = {
           height: 500,
         },
         {
-          title: "Area of Study and Sports Attendance",
+          title: "Area of study and sports attendance",
           text: [
             "Looking at areas of study, journalism students seem to frequent sporting events most often, with about 44.5% reporting that they attend sporting events two or more times per quarter. Trailing by a hair are students studying math, computer science, statistics or data science.",
             "On the other end, students studying performing and visual arts have the highest percentage reporting that they never attend sporting events at nearly 40%. Just more than a quarter of them say they attend one sporting event per year. The next highest percentage of students who report never attending a sporting event are those studying engineering, at around 25%."
           ],
           embed: 'https://flo.uri.sh/visualisation/28902147/embed',
-          height: 500,
+          height: 550,
         },
         {
-          title: "Sports Type",
+          title: "Sports type",
           text: [
             "Responding to which types of NU sports they have watched in person, about 65% selected football and about 55% selected men’s basketball. The next most-selected sport is women’s volleyball, at about 30%.",
             "All three of these sports are accessible via a walk to Martin Stadium or a bus ride to Welsh-Ryan. Sports located off campus don’t have the same fortune. Namely, women’s golf, women’s cross country, men’s golf and women’s indoor track collectively made up less than 1% of selections."
           ],
           embed: 'https://flo.uri.sh/visualisation/28941036/embed',
-          height: 500,
+          height: 750,
         },
       ],
 
