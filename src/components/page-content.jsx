@@ -7,17 +7,21 @@ import './page-content.css'
 const page_content = {
     "page-wellbeing": [
         {
-          title: "TKTK",
+          title: "Frequent Drinking Is More Common Among Students Involved in Greek Life",
           text: [
-            "TKTK",
+            "Greek life has long played an integral role in some students’ college experience. According to Northwestern’s Division of Student Affairs, about 18% of the undergraduate student body is in a sorority or fraternity.",
+            "Students involved in Greek life on campus reported drinking alcohol at substantially higher rates than their non-Greek peers. Out of students who say they never drink, only 7.8% are in Greek life.",
+            "Respondents who drank alcohol more frequently were more likely to be involved in Greek life. Of respondents who reported drinking several times a week, nearly 63% are involved in Greek life."
           ],
           embed: null,
           height: 550,
         },
         {
-          title: "TKTK",
+          title: "First-Year Students Report Higher Social Satisfaction in Spring Than Fall",
           text: [
-            "TKTK",
+            "When first-year students arrive on campus in September, they spend their first few months adjusting to the new college environment, fostering relationships and finding their communities.",
+            "Since the fall, the number of first-year respondents who reported that they were “very satisfied” with their social life at NU rose from 19.3% to 30.3% in the spring. At the same time, the number of students who said they were “somewhat satisfied” fell from 56.2% to 48.7%. The overall number of respondents that are satisfied has increased to 79%.",
+            "Overall, the first-year student body is easing into their college experience, exploring friendships, extracurricular involvement and campus life as the year has progressed."
           ],
           embed: null,
           height: 500,
