@@ -14,7 +14,7 @@ function Home() {
     <div id = "home"> 
     <img className = "la" src = '/la.jpg'/>
       <h1 id =" title">THE DAILY NORTHWESTERN'S <br /> SPRING 2026 POLL</h1>
-      <p>The latest edition of The Daily's biannual student poll is here! <br></br> 
+      <p>The latest edition of The Daily's biannual student poll is here.<br></br> 
       Take a look around.</p>
 
 
