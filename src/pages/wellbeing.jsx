@@ -1,6 +1,7 @@
 import DataDashboard from "../components/data-dashboard"
 import PageContent from "../components/page-content"
 import { useEffect } from "react"
+import StandoutStat from "../components/standout-stat"
 
 
 function Wellbeing() {
@@ -17,6 +18,14 @@ function Wellbeing() {
       <p className = "intro-blurb">For college undergraduates, well-being can hang in the balance as students navigate academics, relationships and new environments. Factors like alcohol consumption, financial stress and social satisfaction do more than just shape daily life. They can play a large role in determining the student experience.
       </p>
     </div> 
+
+    <StandoutStat
+            shadowColor=" #a0a972"
+              stats={[
+                { above: "Out of those who never drink, only", stat: "7.8%", below: "are in Greek life" },
+                { above: "Of students on financial aid,", stat: "47.6%", below: "said finances contribute negatively to their well-being" }
+              ]}
+            />
 
 
 <div className='maps'>

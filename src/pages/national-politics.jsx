@@ -1,6 +1,7 @@
 import DataDashboard from "../components/data-dashboard"
 import PageContent from "../components/page-content"
 import { useEffect } from "react"
+import StandoutStat from "../components/standout-stat"
 
 
 function NationalPolitics() {
@@ -23,18 +24,13 @@ function NationalPolitics() {
     
     </div> 
 
-    <div id = 'double-standout-stat'>
-      <div className = 'stat1'>
-      <p className = 'above-stat'>More than</p> 
-      <img src = '/s26poll/92.png' alt = 'stat1' className = 'stat-img'/>
-      <p className = 'below-stat'>of respondents disapproved of Trump’s job performance</p>
-      </div> 
-      <div className = 'stat2'>
-      <p className = 'above-stat'>LGBTQ+ respondents were</p> 
-      <h1 className = 'stat'>92%</h1>
-      <p className = 'below-stat'>points more “very liberal” than non-LGBTQ+ respondents</p>
-      </div> 
-    </div>
+    <StandoutStat
+  shadowColor="#e6c05a"
+  stats={[
+    { above: 'More than', stat: '92%', below: "of respondents disapproved of Trump's job performance" },
+    { above: 'LGBTQ+ respondents were', stat: '33 points', below: 'more "very liberal" than non-LGBTQ+ respondents' },
+  ]}
+  />
 
     <div id = 'natpol-page-content'> 
       <PageContent pageKey="page-national-politics" />

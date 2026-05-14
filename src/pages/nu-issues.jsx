@@ -1,7 +1,7 @@
 import DataDashboard from "../components/data-dashboard"
 import { useEffect, useState } from "react"
 import PageContent from "../components/page-content"
-
+import StandoutStat from "../components/standout-stat"
 function NUIssues() {
   const [open, setOpen] = useState(false)
   useEffect(() => {
@@ -18,6 +18,14 @@ function NUIssues() {
       <p className = "intro-blurb">This academic year, students have seen a shift in the presidency, the end of the federal funding freeze and its lasting impact. 
       </p>
     </div> 
+
+    <StandoutStat
+    shadowColor="rgba(112, 82, 148, 0.66)" 
+  stats={[
+    { above: 'More than', stat: '50%', below: "of Northwestern’s student body said it wasn’t familiar with interim President Henry Bienen’s actions." },
+    { above: null, stat: '40.1%', below: 'of students believe the decisions made by the next president will impact their college experience. ' },
+  ]}
+  />
 
     <div className="deering-box" style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>
     <img src="gfx/deering.webp" alt="Click to open" />

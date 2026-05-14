@@ -1,6 +1,7 @@
 import DataDashboard from "../components/data-dashboard"
 import PageContent from "../components/page-content"
 import { useEffect } from "react"
+import StandoutStat from "../components/standout-stat"
 
 function Jobs() {
     useEffect(() => {
@@ -16,6 +17,15 @@ function Jobs() {
       <p className = "intro-blurb">It’s no secret that Northwestern students are driven by their career goals as they put together summer plans and worry over internship applications. Numerous factors can come into play, from a student’s area of study to concerns about artificial intelligence’s impact on their career. Regardless of major or interests, summer plans and career paths are a vital part of every NU student’s academic journey. 
       </p>
     </div> 
+
+     <StandoutStat
+            shadowColor="#86b5ad"
+              stats={[
+                { above: null, stat: "50.3%", below: "of NU students who applied to more than 100 internships were juniors" },
+                { above: "Around", stat: "61%", below: "of students are concerned about their job prospects" },
+              ]}
+            />
+        
 
         <div id = 'jobs-page-content'> 
           <PageContent pageKey="page-jobs" />

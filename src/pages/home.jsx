@@ -1,7 +1,7 @@
 import CategoryIcons from "../components/category-icons";
 import StoryCard from "../components/story-card";
 import { FaPlay, FaQuestion } from 'react-icons/fa';
-import { PiSpeakerHighFill } from "react-icons/pi";
+import { PiPlay, PiPlayFill, PiSpeakerHighFill } from "react-icons/pi";
 import { useEffect } from "react";
 
 function Home() {
@@ -57,12 +57,21 @@ function Home() {
         link="https://dailynorthwestern.com/2026/05/13/games/polling-quiz-how-well-do-you-know-your-peers/"
         />
 
+<StoryCard 
+        title = "Quick recap"
+        photo = '/s26poll/purple.png'
+        icon = {<PiPlayFill />}
+        link="https://www.instagram.com/reel/DYSZQJQgMQB/?igsh=NTN4bmVkMnFtZmh5"
+        />
+
         <StoryCard 
         title = "Listen behind the scenes"
         photo = '/s26poll/bts-illo.jpg'
         icon = {<PiSpeakerHighFill />}
         link="https://dailynorthwestern.com/2026/05/13/audio/behind-the-scenes-of-nu-in-bloom-the-dailys-spring-2026-poll/"
         />
+
+        
       </div>
     </div> 
     </div> 

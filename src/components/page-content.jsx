@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import scrollama from 'scrollama'
 import './page-content.css'
+import React from 'react'
+import StandoutStat from './standout-stat'
 
 
 /*Content for each page */
@@ -34,7 +36,7 @@ const page_content = {
             "Sophomores are the most likely to be very unsatisfied with their social lives at about 30% and both sophomores and seniors spend the most time on their phones."
           ], 
           embed: 'https://flo.uri.sh/visualisation/28879164/embed',
-          height: 500 
+          height: 700 
         }, 
         {
           title: 'Financial aid and well-being', 
@@ -67,10 +69,10 @@ const page_content = {
             "A majority of students across all years disagreed that artificial intelligence is beneficial to their educational development.",
             "Almost half of seniors strongly disagreed with the statement, far exceeding any other grade. About 30% of sophomores disagreed and approximately the same proportion strongly disagreed, while juniors reflected similar patterns.", 
             "Still, a smaller number of students across all years agreed with the statement. More than 20% of sophomores agreed, with juniors close behind, followed by seniors and first-years at about 15% each. Strong agreement remained very low across all years, at 5% for first-years and about 3% for the other groups.",
-            "A moderate share of students neither agreed nor disagreed, including 22% of first-years, nearly 20% of juniors, 15% of sophomores and 13% of seniors.",
+            "A moderate share of students neither agreed nor disagreed, including 22% of first-years, nearly 20% of juniors, 15% of sophomores and 13% of seniors."
           ],
           embed: 'https://flo.uri.sh/visualisation/28901072/embed',
-          height: 500,
+          height: 600,
         },
         {
           title: "Professional impacts",
@@ -89,7 +91,7 @@ const page_content = {
             "At a national level, Democrats and Republicans seemed united in their concerns about AI, according to a recent poll by NBC News. Yet, NU students do not seem to be following this particular trend.", 
             "Among those who self-identified as moderate or conservative, 50.9% of them agreed that AI will impact their future career. In this group, 18.3% of respondents “strongly agreed.”", 
             "Of those who identified themselves as very liberal, 32.9% disagreed with the statement. Another 33.8% “strongly disagreed” with the statement.", 
-            "Students who identified themselves as liberal landed in the middle. About 36% of them reported neither agreeing or disagreeing with the statement.", 
+            "Students who identified themselves as liberal landed in the middle. About 36% of them reported neither agreeing or disagreeing with the statement."
           ],
           embed: 'https://flo.uri.sh/visualisation/28877588/embed', 
           height: 600, 
@@ -113,7 +115,7 @@ const page_content = {
             "A similar proportion of men and women reported agreeing with that statement, with men surpassing women by only 5.3%. The proportion of both gender categories who reported feeling in the middle are both about 15%. Even the proportions of respondents who “strongly disagree” are nearly neck and neck, with just less than 31% for women and just less than 32% for men."
           ],
           embed: 'https://flo.uri.sh/visualisation/28879218/embed',
-          height: 500,
+          height: 600,
         },
         {
           title: "Area of study and sports attendance",
@@ -152,7 +154,7 @@ const page_content = {
             "No students studying journalism reported conducting research at NU over the summer at the time of the poll. Of all positions engineers are pursuing this summer, an industry-specific paid internship is the greatest, at 20%. Math, statistics, computer science or data science students follow close behind, making up 16.8% of students with a paid professional internship. ", 
         ],
           embed: 'https://flo.uri.sh/visualisation/28875771/embed',
-          height: 500,
+          height: 600,
         },
         {
             title: "AI's impact",
@@ -161,7 +163,7 @@ const page_content = {
                 "Journalism students were the most likely to strongly disagree that AI will have a positive impact on their field, with 45.7% sharing strongly pessimistic views. Humanities and social sciences students followed closely behind, at 42.9%. Life and physical sciences students were the most likely to be optimistic about AI’s impact to some degree, with 14.2% agreeing and 6.8% strongly agreeing with the statement.", 
             ],
             embed: 'https://flo.uri.sh/visualisation/28874793/embed',
-            height: 550,
+            height: 600,
         },
         {
             title: "Job prospects and mental health",
@@ -170,7 +172,7 @@ const page_content = {
                 "Of the students who reported that the topic of careers negatively impacts their mental health, 76.6% strongly agreed that job prospects were a major concern. Conversely, of students that “strongly disagree” that future job prospects are a concern, 63.6% reported that their career positively contributes to their mental health. ",  
             ],
             embed: 'https://flo.uri.sh/visualisation/28875010/embed',
-            height: 550,
+            height: 600,
         },
         {
             title: "The job market across political ideologies",
@@ -179,7 +181,7 @@ const page_content = {
                 "Moderate and conservative students put more weight on the state of the job market than their left-leaning peers, with 45.1% agreeing that their career plans are influenced by the job market. In contrast, 49.9% of liberal and 46.5% of strongly liberal students agreed to some degree. Between 20%-25% across the political spectrum disagreed to some extent, not feeling influenced by the job market. "
             ],
             embed: 'https://flo.uri.sh/visualisation/28875289/embed',
-            height: 550,
+            height: 700,
         },
       ],
 
@@ -193,7 +195,7 @@ const page_content = {
             "Support for the deal varied across students’ political leanings. Of moderate and conservative students, 60.3% supported the deal, as compared to 30.5% of “liberal” students and 10.5% of “very liberal” students.", 
           ],
           embed: 'https://flo.uri.sh/visualisation/28876441/embed',
-          height: 550,
+          height: 700,
         },
         {
           title: "Impact of NU's next president",
@@ -203,7 +205,7 @@ const page_content = {
             "Both Schill and Bienen have been navigating an unusually turbulent higher education landscape, but the primary tension with the federal government, research funding and federal investigations, has stopped. Now, students could be anticipating the way the next president deals with the aftermath and how it might impact their NU experience.", 
           ],
           embed: 'https://flo.uri.sh/visualisation/28877577/embed',
-          height: 500,
+          height: 700,
         },
         {
           title: 'Antisemitism in 2025 vs 2026',
@@ -215,7 +217,7 @@ const page_content = {
 
           ], 
           embed: 'https://flo.uri.sh/visualisation/28878793/embed', 
-          height: 550, 
+          height: 600, 
         }
       ],
 
@@ -261,7 +263,7 @@ const page_content = {
         text: [
           <>NU’s response policies to federal immigration enforcement, including ICE, have hardly been publicly elaborated. April 2025 guidance advised students to call NU police if approached by a federal officer. When The Daily asked interim President Henry Bienen whether a response plan existed in {" "}<a href = "https://dailynorthwestern.com/2026/01/12/lateststories/bienen-talks-federal-funding-deal-immigration-enforcement-in-interview-with-the-daily/">January,</a> {" "} he responded, “Good question that I don’t know the answer to.”</>,
           "Nearly a quarter of respondents said they had no opinion on the policies, or lack thereof. Split by race, students who only self-identified as white drove that statistic, with almost 28% having no opinion, compared to more than 12% of Hispanic and Latino respondents.", 
-          "While varied, respondents from all groups generally skewed negative toward the policies. Almost 47% of opinionated respondents said they were least somewhat insufficient, as well as just over half of opinionated respondents who strongly disapproved of the current actions of federal immigration enforcement.", 
+          "While varied, respondents from all groups generally skewed negative toward the policies. Almost 47% of opinionated respondents said they were least somewhat insufficient, as well as just over half of opinionated respondents who strongly disapproved of the current actions of federal immigration enforcement."
         ],
         embed: "https://dailydv.netlify.app/polling/ir.html",
         height: 795,
@@ -348,30 +350,30 @@ export default function PageContent({ pageKey }) {
         </div>
       </div>
 
-      <div className="scrolly-text-col">
+<div className="scrolly-text-col">
   {sections.map((section, i) => (
-    <div
-      key={i}
-      className={`scrolly-step scrolly-text-box ${i === activeIndex ? 'scrolly-text-box--active' : ''}`}
-    >
-      {section.embed && (
-        <iframe
-          src={section.embed}
-          title={`mobile-dv-${i}`}
-          className="mobile-embed"
-          height={section.height || 500}
-          allowFullScreen
-        />
-      )}
-      {section.title && <h3 className="scrolly-section-title">{section.title}</h3>}
-      {Array.isArray(section.text)
-        ? section.text.map((para, j) => <p key={j}>{para}</p>)
-        : <p>{section.text}</p>
-      }
-    </div>
+    <React.Fragment key={i}>
+      <div className={`scrolly-step scrolly-text-box ${i === activeIndex ? 'scrolly-text-box--active' : ''}`}>
+        {section.embed && (
+          <iframe
+            src={section.embed}
+            title={`mobile-dv-${i}`}
+            className="mobile-embed"
+            height={section.height || 500}
+            allowFullScreen
+          />
+        )}
+        {section.title && <h3 className="scrolly-section-title">{section.title}</h3>}
+        {Array.isArray(section.text)
+          ? section.text.map((para, j) => <p key={j}>{para}</p>)
+          : <p>{section.text}</p>
+        }
+      </div>
+
+    
+    </React.Fragment>
   ))}
 </div>
-
     </div>
   )
-} 
+}

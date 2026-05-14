@@ -10,13 +10,13 @@
 .story-card {
     position: relative;
     display: inline-block;
-    max-width: 300px; 
+    width: 300px; 
 }
 
 .story-title {
     color: white;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(58, 58, 58, 0.77);
     border-radius: 8px; 
     padding: 4px 12px;
     width: auto; 
@@ -29,7 +29,7 @@
 
 .story-photo {
     width: 100%; /* Set a fixed width for the images */
-    height: auto; /* Set a fixed height for the images */
+    height: 200px; /* Set a fixed height for the images */
     object-fit: cover; /* Ensure the image fits within the dimensions */
     margin-bottom: 0.5rem; 
     border-radius: 8px;

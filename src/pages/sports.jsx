@@ -1,6 +1,7 @@
 import DataDashboard from "../components/data-dashboard"
 import PageContent from "../components/page-content"
 import { useEffect } from "react"
+import StandoutStat from "../components/standout-stat"
 
 function Sports() {
     useEffect(() => {
@@ -16,6 +17,14 @@ function Sports() {
       <p className = "intro-blurb">Big Ten athletic programs are a defining part of the Northwestern experience, or at least it appears that way. Singing the NU Fight Song under the glaring sun in Martin Stadium stands is a quintessential experience for nearly every first-year student at Wildcat Welcome. But after that initial football game, how much do NU students really want to “fight for victory?”   
       </p>
     </div> 
+
+<StandoutStat
+    shadowColor="#F0A94F"
+  stats={[
+    { above: null, stat: '23%', below: "of undergraduates say they have never attended an NU sporting event." },
+    { above: 'More than', stat: '60%', below: 'of NU students said they either disagree or strongly disagree with the statement, “Northwestern sports are an important part of my college experience.' },
+  ]}
+  />
 
 
     <div id = 'sports-page-content'> 

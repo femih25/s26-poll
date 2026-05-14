@@ -22,12 +22,8 @@ function App() {
           <Route path="/national-politics" element={<NationalPolitics />} />
         </Routes>
     <div id = 'footer'>
-      <p>Editor in Chief: Anavi Prakash</p>
-      <p>Polling Editor: Ashley Wei</p>
-      <p>Web Developer: Femi Horrall</p>
-      <p>Illustrations Editor: Lucas Kubovchik</p>
-      <p>Data Visualizations Editor: Yong-Yu Huang</p>
-      <p>Assistant Multimedia Features Editor: Ryan Ottignon</p>
+      <p>Editor in Chief: Anavi Prakash | Polling Editor: Ashley Wei | Web Developer: Femi Horrall</p>
+      <p>Data Visualizations Editor: Yong-Yu Huang | Illustrations Editor: Lucas Kubovchik | Assistant Multimedia Features Editor: Ryan Ottignon</p>
 
     </div>
     </div>
