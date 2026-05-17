@@ -71,6 +71,13 @@ function Home() {
         link="https://dailynorthwestern.com/2026/05/13/audio/behind-the-scenes-of-nu-in-bloom-the-dailys-spring-2026-poll/"
         />
 
+<StoryCard 
+        title = "How similar are you to the average NU student?"  
+        photo = '/s26poll/avg_student_illo.jpg'
+        icon = {<FaQuestion />}
+        link="https://dailynorthwestern.com/2026/05/14/games/quiz-how-similar-are-you-to-the-average-northwestern-student/"
+        />
+
         
       </div>
     </div> 

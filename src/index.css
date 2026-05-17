@@ -266,6 +266,7 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
   align-items: center;
   padding: 0 5rem;
   margin-bottom: 0.5rem;
+  margin-top: 5rem;
 }
 
 .sb-map, .cry-map {
@@ -287,6 +288,10 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
   width: 100%;
   border-radius: 8px;
   height: 550px;
+}
+
+.sb-map h2{
+  margin-bottom: 2rem; 
 }
 
 @media (max-width: 768px) {
@@ -582,7 +587,7 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
   display: flex;
   gap: 3rem;
   padding: 0 15%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 #double-standout-stat .stat1,
@@ -614,7 +619,7 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 }
 
 #double-standout-stat .below-stat{
-  margin-bottom: 5rem; 
+  margin-bottom: 7rem; 
   max-width: 55%;
 }
 
@@ -637,6 +642,7 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 
   #double-standout-stat .below-stat {
     margin-bottom: 2rem !important; 
+    max-width: 100%;
   }
 
   #double-standout-stat .stat {
@@ -667,6 +673,7 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
+    padding: 0 8%;
   }
 
   h2 {
@@ -692,6 +699,7 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
 
   p {
     font-size: 16px;
+    padding: 0 12%;
   }
 
   p.intro-blurb {
@@ -748,4 +756,6 @@ body.page-nu-issues h2.page-title::after         { background-color: #705294; }
     .la {
       margin-top: 0;
     }
+
+ 
   }
